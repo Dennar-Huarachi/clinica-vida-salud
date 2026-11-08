@@ -1,0 +1,358 @@
+@startuml Diagrama_Relacional_Clinica_Vida_Salud
+!theme plain
+skinparam linetype ortho
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 11
+skinparam roundCorner 2
+
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #000000
+  HeaderBackgroundColor #F2F2F2
+  FontColor #000000
+  FontStyle bold
+  FontSize 11
+  AttributeFontColor #000000
+  AttributeFontSize 10
+}
+
+skinparam arrow {
+  Color #000000
+  FontColor #000000
+  FontSize 9
+}
+
+hide methods
+hide circle
+
+class roles {
+  + id_rol : BIGINT [PK]
+  --
+  nombre : VARCHAR(50)
+  descripcion : VARCHAR(255)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class permisos {
+  + id_permiso : BIGINT [PK]
+  --
+  modulo : VARCHAR(60)
+  nombre : VARCHAR(100)
+  slug : VARCHAR(100)
+  descripcion : VARCHAR(255)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class rol_permiso {
+  + id_rol : BIGINT [PK, FK]
+  + id_permiso : BIGINT [PK, FK]
+  --
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class personas {
+  + id_persona : BIGINT [PK]
+  --
+  ci : VARCHAR(25)
+  nombres : VARCHAR(80)
+  apellidos : VARCHAR(80)
+  fecha_nacimiento : DATE
+  sexo : CHAR(1)
+  telefono : VARCHAR(25)
+  correo : VARCHAR(120)
+  direccion : VARCHAR(255)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class usuarios {
+  + id_usuario : BIGINT [PK]
+  --
+  id_persona : BIGINT [FK]
+  id_rol : BIGINT [FK]
+  nombre_usuario : VARCHAR(60)
+  correo : VARCHAR(120)
+  contrasena_hash : VARCHAR(255)
+  debe_cambiar_contrasena : BOOLEAN
+  estado : VARCHAR(20)
+  ultimo_acceso : TIMESTAMP
+  token_sesion : VARCHAR(255)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class pacientes {
+  + id_paciente : BIGINT [PK]
+  --
+  id_persona : BIGINT [FK]
+  codigo_historia : VARCHAR(30)
+  grupo_sanguineo : VARCHAR(10)
+  estado : VARCHAR(20)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class informacion_medica_paciente {
+  + id_informacion_medica : BIGINT [PK]
+  --
+  id_paciente : BIGINT [FK]
+  alergias : TEXT
+  enfermedades_cronicas : TEXT
+  medicamentos_actuales : TEXT
+  antecedentes_familiares : TEXT
+  observaciones : TEXT
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class contactos_emergencia {
+  + id_contacto_emergencia : BIGINT [PK]
+  --
+  id_paciente : BIGINT [FK]
+  nombre_completo : VARCHAR(150)
+  relacion : VARCHAR(50)
+  telefono : VARCHAR(25)
+  direccion : VARCHAR(255)
+  es_principal : BOOLEAN
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class medicos {
+  + id_medico : BIGINT [PK]
+  --
+  id_persona : BIGINT [FK]
+  nro_matricula : VARCHAR(50)
+  biografia : TEXT
+  estado : VARCHAR(20)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class especialidades {
+  + id_especialidad : BIGINT [PK]
+  --
+  nombre : VARCHAR(80)
+  nombre_normalizado : VARCHAR(80)
+  descripcion : VARCHAR(255)
+  duracion_turno_minutos : SMALLINT
+  reservable_en_linea : BOOLEAN
+  estado : VARCHAR(20)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class medico_especialidad {
+  + id_medico_especialidad : BIGINT [PK]
+  --
+  id_medico : BIGINT [FK]
+  id_especialidad : BIGINT [FK]
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class horarios_atencion {
+  + id_horario : BIGINT [PK]
+  --
+  id_medico : BIGINT [FK]
+  id_especialidad : BIGINT [FK]
+  dia_semana : SMALLINT
+  hora_inicio : TIME
+  hora_fin : TIME
+  duracion_intervalo_minutos : SMALLINT
+  estado : VARCHAR(20)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class suspensiones_horario {
+  + id_suspension : BIGINT [PK]
+  --
+  id_medico : BIGINT [FK]
+  fecha_inicio : TIMESTAMP
+  fecha_fin : TIMESTAMP
+  motivo : VARCHAR(255)
+  estado_citas_accion : VARCHAR(30)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class bloqueos_clinica {
+  + id_bloqueo : BIGINT [PK]
+  --
+  id_medico : BIGINT [FK]
+  titulo : VARCHAR(100)
+  motivo : TEXT
+  fecha_inicio : TIMESTAMP
+  fecha_fin : TIMESTAMP
+  aplica_a_todos : BOOLEAN
+  estado : VARCHAR(20)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class estados_cita {
+  + id_estado_cita : BIGINT [PK]
+  --
+  codigo : VARCHAR(30)
+  nombre : VARCHAR(50)
+  descripcion : VARCHAR(255)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class citas {
+  + id_cita : BIGINT [PK]
+  --
+  codigo_cita : VARCHAR(25)
+  id_paciente : BIGINT [FK]
+  id_medico : BIGINT [FK]
+  id_especialidad : BIGINT [FK]
+  id_estado_cita : BIGINT [FK]
+  id_usuario_agenda : BIGINT [FK]
+  fecha_cita : DATE
+  hora_inicio : TIME
+  hora_fin : TIME
+  motivo_consulta : VARCHAR(255)
+  observaciones : TEXT
+  es_postergada : BOOLEAN
+  fecha_expiracion_reserva : TIMESTAMP
+  pago_confirmado : BOOLEAN
+  estado : VARCHAR(20)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class pagos_cita {
+  + id_pago : BIGINT [PK]
+  --
+  id_cita : BIGINT [FK]
+  monto : NUMERIC(10,2)
+  metodo_pago : VARCHAR(30)
+  nro_transaccion : VARCHAR(50)
+  estado_pago : VARCHAR(20)
+  detalles_pasarela : JSONB
+  fecha_pago : TIMESTAMP
+  fecha_reembolso : TIMESTAMP
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class notificaciones {
+  + id_notificacion : BIGINT [PK]
+  --
+  id_usuario : BIGINT [FK]
+  tipo : VARCHAR(40)
+  titulo : VARCHAR(100)
+  mensaje : TEXT
+  leido : BOOLEAN
+  fecha_leido : TIMESTAMP
+  metadata : JSONB
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class atenciones_clinicas {
+  + id_atencion : BIGINT [PK]
+  --
+  id_cita : BIGINT [FK]
+  id_paciente : BIGINT [FK]
+  id_medico : BIGINT [FK]
+  motivo_atencion : TEXT
+  examen_fisico : TEXT
+  diagnostico : TEXT
+  tratamiento_indicaciones : TEXT
+  receta_medica : TEXT
+  fecha_atencion : TIMESTAMP
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class resultados_laboratorio {
+  + id_resultado : BIGINT [PK]
+  --
+  id_paciente : BIGINT [FK]
+  id_atencion : BIGINT [FK]
+  tipo_estudio : VARCHAR(80)
+  descripcion : TEXT
+  archivo_adjunto : VARCHAR(255)
+  fecha_estudio : DATE
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class bitacora_auditoria {
+  + id_bitacora : BIGINT [PK]
+  --
+  id_usuario : BIGINT [FK]
+  caso_uso : VARCHAR(40)
+  accion : VARCHAR(60)
+  tabla_afectada : VARCHAR(40)
+  registro_id : BIGINT
+  datos_anteriores : JSONB
+  datos_nuevos : JSONB
+  ip_origen : VARCHAR(45)
+  user_agent : VARCHAR(255)
+  fecha_hora : TIMESTAMP
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class copias_seguridad {
+  + id_copia : BIGINT [PK]
+  --
+  id_usuario : BIGINT [FK]
+  nombre_archivo : VARCHAR(150)
+  ruta_almacenamiento : VARCHAR(255)
+  tamano_bytes : BIGINT
+  tipo : VARCHAR(20)
+  estado : VARCHAR(20)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+class parametros_sistema {
+  + id_parametro : BIGINT [PK]
+  --
+  clave : VARCHAR(60)
+  valor : VARCHAR(255)
+  descripcion : VARCHAR(255)
+  tipo_dato : VARCHAR(20)
+  created_at : TIMESTAMP
+  updated_at : TIMESTAMP
+}
+
+' Relaciones
+roles "1" --> "0..*" usuarios
+roles "1" --> "0..*" rol_permiso
+permisos "1" --> "0..*" rol_permiso
+usuarios "0..1" --> "1" personas
+personas "1" --> "0..1" pacientes
+personas "1" --> "0..1" medicos
+pacientes "1" --> "0..1" informacion_medica_paciente
+pacientes "1" --> "0..*" contactos_emergencia
+medicos "1" --> "1..*" medico_especialidad
+especialidades "1" --> "0..*" medico_especialidad
+medicos "1" --> "0..*" horarios_atencion
+especialidades "1" --> "0..*" horarios_atencion
+medicos "1" --> "0..*" suspensiones_horario
+medicos "0..1" --> "0..*" bloqueos_clinica
+estados_cita "1" --> "0..*" citas
+pacientes "1" --> "0..*" citas
+medicos "1" --> "0..*" citas
+especialidades "1" --> "0..*" citas
+usuarios "0..1" --> "0..*" citas
+citas "1" --> "0..1" pagos_cita
+usuarios "1" --> "0..*" notificaciones
+citas "1" --> "0..1" atenciones_clinicas
+pacientes "1" --> "0..*" atenciones_clinicas
+medicos "1" --> "0..*" atenciones_clinicas
+pacientes "1" --> "0..*" resultados_laboratorio
+atenciones_clinicas "0..1" --> "0..*" resultados_laboratorio
+usuarios "0..1" --> "0..*" bitacora_auditoria
+usuarios "0..1" --> "0..*" copias_seguridad
+
+@enduml

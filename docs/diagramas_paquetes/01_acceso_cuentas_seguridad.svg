@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 2560 1600" 
+     width="2560" 
+     height="1600"
+     style="background-color: #FFFFFF; font-family: 'Segoe UI', Arial, sans-serif;">
+
+  <defs>
+    <pattern id="eaGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.2" fill="#E2E8F0" />
+    </pattern>
+
+    <linearGradient id="eaHeaderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EBF4FA" />
+      <stop offset="100%" stop-color="#D3E6F5" />
+    </linearGradient>
+
+    <linearGradient id="eaPkgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FB" />
+      <stop offset="100%" stop-color="#DAEAF5" />
+    </linearGradient>
+
+    <filter id="eaShadow" x="-2%" y="-2%" width="105%" height="106%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="3" dy="4" stdDeviation="3.5" flood-color="#0F172A" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2560" height="1600" fill="#FFFFFF" />
+  <rect width="2560" height="1600" fill="url(#eaGrid)" opacity="0.6" />
+
+  <!-- Top Header Banner -->
+  <g id="header_banner" filter="url(#eaShadow)">
+    <rect x="50" y="40" width="2460" height="110" rx="4" fill="#FFFFFF" stroke="#234C73" stroke-width="2" />
+    <rect x="50" y="40" width="16" height="110" fill="#234C73" />
+
+    <text x="90" y="86" font-size="28" font-weight="bold" fill="#0A2540" letter-spacing="0.5">
+      PAQUETE 01: ACCESO, CUENTAS Y SEGURIDAD — CL&#205;NICA VIDA SALUD
+    </text>
+    <text x="90" y="122" font-size="16" fill="#4B6584" font-weight="600">
+      Roles, Permisos, Asignaci&#243;n Rol-Permiso y Cuentas de Usuarios (Seguridad OWASP)
+    </text>
+
+    <!-- Metadata Badges -->
+    <g transform="translate(1740, 60)">
+      <rect x="0" y="0" width="220" height="70" rx="3" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.2"/>
+      <text x="14" y="28" font-size="12" font-weight="bold" fill="#64748B">SISTEMA</text>
+      <text x="14" y="54" font-size="16" font-weight="bold" fill="#0F172A">Cl&#237;nica Vida Salud</text>
+
+      <rect x="240" y="0" width="240" height="70" rx="3" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.2"/>
+      <text x="254" y="28" font-size="12" font-weight="bold" fill="#64748B">EST&#193;NDAR / FECHA</text>
+      <text x="254" y="54" font-size="16" font-weight="bold" fill="#0F172A">Enterprise Architect 2.5</text>
+
+      <rect x="500" y="0" width="250" height="70" rx="3" fill="#EBF3FA" stroke="#234C73" stroke-width="1.2"/>
+      <text x="514" y="28" font-size="12" font-weight="bold" fill="#0F4C81">MOTOR BD</text>
+      <text x="514" y="54" font-size="16" font-weight="bold" fill="#00264D">PostgreSQL Nativo</text>
+    </g>
+  </g>
+
+  <!-- Relationships Layer -->
+  <g id="relations_layer">
+    
+  <!-- Relation: roles -> usuarios -->
+  <g>
+    <path d="M 330 440 L 330 950" fill="none" stroke="#2B547E" 
+          stroke-width="2.4" 
+          stroke-dasharray="none" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="344" y="464" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="344" y="936" font-size="16" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(259, 680)">
+      <rect x="0" y="0" width="142" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="71" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        asigna rol a
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Relation: roles -> rol_permiso -->
+  <g>
+    <path d="M 560 320 L 740 320 L 740 640" fill="none" stroke="#2B547E" 
+          stroke-width="2.4" 
+          stroke-dasharray="none" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="576" y="310" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="754" y="626" font-size="16" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(702.25, 465)">
+      <rect x="0" y="0" width="75.5" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="37.75" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        posee
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Relation: permisos -> rol_permiso -->
+  <g>
+    <path d="M 1100 390 L 920 390 L 920 640" fill="none" stroke="#2B547E" 
+          stroke-width="2.4" 
+          stroke-dasharray="none" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="1064" y="380" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="934" y="626" font-size="16" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(849, 500)">
+      <rect x="0" y="0" width="142" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="71" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        concedido en
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Relation: usuarios -> personas -->
+  <g>
+    <path d="M 620 1100 L 1100 1100" fill="none" stroke="#64748B" 
+          stroke-width="2" 
+          stroke-dasharray="6,4" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="636" y="1090" font-size="16" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="1060" y="1090" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(793.75, 1085)">
+      <rect x="0" y="0" width="132.5" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="66.25" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        accede como
+      </text>
+    </g>
+  </g>
+
+  </g>
+
+  <!-- Classes Layer -->
+  <g id="classes_layer" filter="url(#eaShadow)">
+    
+  <!-- Class: roles -->
+  <g id="table_roles">
+    <!-- Class Outer Box -->
+    <rect x="100" y="200" width="460" height="264" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="2.4" rx="3" />
+
+    <!-- Class Header Compartment -->
+    <rect x="100" y="200" width="460" height="70" 
+          fill="url(#eaHeaderGrad)" rx="3" />
+    <line x1="100" y1="270" x2="560" y2="270" 
+          stroke="#234C73" stroke-width="2.4" />
+
+    <!-- Stereotype «table» -->
+    <text x="330" y="226" text-anchor="middle" 
+          font-size="16" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Table Name -->
+    <text x="330" y="254" text-anchor="middle" 
+          font-size="21" font-weight="bold" fill="#00264D" letter-spacing="0.4">
+      roles
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_roles">
+      <g transform="translate(118, 298)">
+        <circle cx="8" cy="-6" r="5.5" fill="none" stroke="#D97706" stroke-width="1.8" />
+        <line x1="13.5" y1="-6" x2="22" y2="-6" stroke="#D97706" stroke-width="1.8" />
+        <line x1="18" y1="-6" x2="18" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <line x1="22" y1="-6" x2="22" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <text x="32" y="0" font-size="18" font-weight="bold" fill="#0F4C81">
+          + id_rol [PK]
+        </text>
+      </g>
+      <line x1="116" y1="314" x2="544" y2="314" 
+            stroke="#A5C4DF" stroke-width="1.2" stroke-dasharray="3,3" />
+      <text x="132" y="332" font-size="17" fill="#1F2937">
+        nombre
+      </text>
+      <text x="132" y="366" font-size="17" fill="#1F2937">
+        descripcion
+      </text>
+      <text x="132" y="400" font-size="17" fill="#1F2937">
+        created_at
+      </text>
+      <text x="132" y="434" font-size="17" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Class: permisos -->
+  <g id="table_permisos">
+    <!-- Class Outer Box -->
+    <rect x="1100" y="200" width="480" height="332" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="2.4" rx="3" />
+
+    <!-- Class Header Compartment -->
+    <rect x="1100" y="200" width="480" height="70" 
+          fill="url(#eaHeaderGrad)" rx="3" />
+    <line x1="1100" y1="270" x2="1580" y2="270" 
+          stroke="#234C73" stroke-width="2.4" />
+
+    <!-- Stereotype «table» -->
+    <text x="1340" y="226" text-anchor="middle" 
+          font-size="16" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Table Name -->
+    <text x="1340" y="254" text-anchor="middle" 
+          font-size="21" font-weight="bold" fill="#00264D" letter-spacing="0.4">
+      permisos
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_permisos">
+      <g transform="translate(1118, 298)">
+        <circle cx="8" cy="-6" r="5.5" fill="none" stroke="#D97706" stroke-width="1.8" />
+        <line x1="13.5" y1="-6" x2="22" y2="-6" stroke="#D97706" stroke-width="1.8" />
+        <line x1="18" y1="-6" x2="18" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <line x1="22" y1="-6" x2="22" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <text x="32" y="0" font-size="18" font-weight="bold" fill="#0F4C81">
+          + id_permiso [PK]
+        </text>
+      </g>
+      <line x1="1116" y1="314" x2="1564" y2="314" 
+            stroke="#A5C4DF" stroke-width="1.2" stroke-dasharray="3,3" />
+      <text x="1132" y="332" font-size="17" fill="#1F2937">
+        modulo
+      </text>
+      <text x="1132" y="366" font-size="17" fill="#1F2937">
+        nombre
+      </text>
+      <text x="1132" y="400" font-size="17" fill="#1F2937">
+        slug
+      </text>
+      <text x="1132" y="434" font-size="17" fill="#1F2937">
+        descripcion
+      </text>
+      <text x="1132" y="468" font-size="17" fill="#1F2937">
+        created_at
+      </text>
+      <text x="1132" y="502" font-size="17" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Class: rol_permiso -->
+  <g id="table_rol_permiso">
+    <!-- Class Outer Box -->
+    <rect x="620" y="640" width="420" height="196" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="2.4" rx="3" />
+
+    <!-- Class Header Compartment -->
+    <rect x="620" y="640" width="420" height="70" 
+          fill="url(#eaHeaderGrad)" rx="3" />
+    <line x1="620" y1="710" x2="1040" y2="710" 
+          stroke="#234C73" stroke-width="2.4" />
+
+    <!-- Stereotype «table» -->
+    <text x="830" y="666" text-anchor="middle" 
+          font-size="16" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Table Name -->
+    <text x="830" y="694" text-anchor="middle" 
+          font-size="21" font-weight="bold" fill="#00264D" letter-spacing="0.4">
+      rol_permiso
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_rol_permiso">
+      <g transform="translate(638, 738)">
+        <circle cx="8" cy="-6" r="5.5" fill="none" stroke="#D97706" stroke-width="1.8" />
+        <line x1="13.5" y1="-6" x2="22" y2="-6" stroke="#D97706" stroke-width="1.8" />
+        <line x1="18" y1="-6" x2="18" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <line x1="22" y1="-6" x2="22" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <text x="32" y="0" font-size="18" font-weight="bold" fill="#0F4C81">
+          + id_rol, id_permiso [PK]
+        </text>
+      </g>
+      <line x1="636" y1="754" x2="1024" y2="754" 
+            stroke="#A5C4DF" stroke-width="1.2" stroke-dasharray="3,3" />
+      <text x="652" y="772" font-size="17" fill="#1F2937">
+        created_at
+      </text>
+      <text x="652" y="806" font-size="17" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Class: usuarios -->
+  <g id="table_usuarios">
+    <!-- Class Outer Box -->
+    <rect x="100" y="950" width="520" height="434" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="2.4" rx="3" />
+
+    <!-- Class Header Compartment -->
+    <rect x="100" y="950" width="520" height="70" 
+          fill="url(#eaHeaderGrad)" rx="3" />
+    <line x1="100" y1="1020" x2="620" y2="1020" 
+          stroke="#234C73" stroke-width="2.4" />
+
+    <!-- Stereotype «table» -->
+    <text x="360" y="976" text-anchor="middle" 
+          font-size="16" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Table Name -->
+    <text x="360" y="1004" text-anchor="middle" 
+          font-size="21" font-weight="bold" fill="#00264D" letter-spacing="0.4">
+      usuarios
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_usuarios">
+      <g transform="translate(118, 1048)">
+        <circle cx="8" cy="-6" r="5.5" fill="none" stroke="#D97706" stroke-width="1.8" />
+        <line x1="13.5" y1="-6" x2="22" y2="-6" stroke="#D97706" stroke-width="1.8" />
+        <line x1="18" y1="-6" x2="18" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <line x1="22" y1="-6" x2="22" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <text x="32" y="0" font-size="18" font-weight="bold" fill="#0F4C81">
+          + id_usuario [PK]
+        </text>
+      </g>
+      <line x1="116" y1="1064" x2="604" y2="1064" 
+            stroke="#A5C4DF" stroke-width="1.2" stroke-dasharray="3,3" />
+      <text x="132" y="1082" font-size="17" fill="#1F2937">
+        nombre_usuario
+      </text>
+      <text x="132" y="1116" font-size="17" fill="#1F2937">
+        correo
+      </text>
+      <text x="132" y="1150" font-size="17" fill="#1F2937">
+        contrasena_hash
+      </text>
+      <text x="132" y="1184" font-size="17" fill="#1F2937">
+        debe_cambiar_contrasena
+      </text>
+      <text x="132" y="1218" font-size="17" fill="#1F2937">
+        estado
+      </text>
+      <text x="132" y="1252" font-size="17" fill="#1F2937">
+        ultimo_acceso
+      </text>
+      <text x="132" y="1286" font-size="17" fill="#1F2937">
+        token_sesion
+      </text>
+      <text x="132" y="1320" font-size="17" fill="#1F2937">
+        created_at
+      </text>
+      <text x="132" y="1354" font-size="17" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  </g>
+
+  <!-- External Classes Layer -->
+  <g id="externals_layer">
+    
+  <!-- External Class Reference: personas -->
+  <g id="ext_personas">
+    <rect x="1100" y="1050" width="420" height="95" 
+          fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="6,4" rx="4" />
+    <text x="1310" y="1076" text-anchor="middle" font-size="13" font-style="italic" fill="#64748B">
+      &#171;external table&#187;
+    </text>
+    <text x="1310" y="1102" text-anchor="middle" font-size="18" font-weight="bold" fill="#334155">
+      personas
+    </text>
+    <text x="1310" y="1124" text-anchor="middle" font-size="13" fill="#64748B">
+      Paquete: Pacientes y Perfil
+    </text>
+  </g>
+
+  </g>
+
+  <!-- Legend Box -->
+  <g id="legend_box" transform="translate(1800, 1180)" filter="url(#eaShadow)">
+    <rect x="0" y="0" width="640" height="320" rx="4" fill="#FFFFFF" stroke="#234C73" stroke-width="2" />
+    <rect x="0" y="0" width="640" height="42" fill="url(#eaHeaderGrad)" rx="4" />
+    <text x="18" y="28" font-size="16" font-weight="bold" fill="#00264D">CONVENCIONES UML ENTERPRISE ARCHITECT</text>
+
+    <g transform="translate(20, 68)">
+      <circle cx="10" cy="-6" r="6" fill="none" stroke="#D97706" stroke-width="2" />
+      <line x1="16" y1="-6" x2="26" y2="-6" stroke="#D97706" stroke-width="2" />
+      <text x="36" y="0" font-size="16" font-weight="bold" fill="#0F4C81">+ id_columna [PK]</text>
+      <text x="36" y="24" font-size="13.5" fill="#64748B">Clave Primaria f&#237;sica de la tabla</text>
+
+      <text x="36" y="64" font-size="16" fill="#1F2937">nombre_columna</text>
+      <text x="36" y="88" font-size="13.5" fill="#64748B">Atributo propio (sin tipos ni llaves for&#225;neas)</text>
+
+      <line x1="0" y1="130" x2="60" y2="130" stroke="#2B547E" stroke-width="2.6" />
+      <text x="74" y="136" font-size="15" font-weight="bold" fill="#0F172A">1 &#8226;&#8226; [verbo] &#8226;&#8226; 0..*</text>
+      <text x="0" y="162" font-size="13.5" fill="#64748B">Asociaci&#243;n relacional con multiplicidad</text>
+
+      <rect x="0" y="185" width="600" height="52" rx="3" fill="#F8FAFC" stroke="#E2E8F0" />
+      <text x="14" y="208" font-size="14" font-weight="bold" fill="#0369A1">REGLA PURA DE MODELADO UML:</text>
+      <text x="14" y="228" font-size="13.5" fill="#475569">Las llaves for&#225;neas no se listan en atributos; se expresan por asociaciones.</text>
+    </g>
+  </g>
+</svg>

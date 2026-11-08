@@ -1,0 +1,37 @@
+# Dependencias y compilación
+/vendor
+vendor/
+node_modules
+node_modules/
+dist/
+backend/vendor/
+frontend/node_modules/
+frontend/dist/
+
+# Entornos y secretos
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+docs/credenciales-demo.md
+
+# Logs y almacenamiento
+storage/logs/
+backend/storage/logs/
+backend/storage/*.key
+backend/storage/app/backups/
+*.log
+
+# Editores y SO
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Documentos internos de trabajo
+/scripts/
+/casos-de-uso-citas-medicas-vida-salud-*.md
+/contexto-proyecto-citas-medicas-vida-salud-*.md
+/estructura-proyecto.md
+/guia-diseno-sitio-web.md

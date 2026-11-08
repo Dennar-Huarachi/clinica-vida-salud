@@ -1,0 +1,838 @@
+/* ============================================================
+   Estilos base y Sistema Responsive — Clínica Vida Salud
+   Reset, tipografía, botones, formularios, alertas y tarjetas.
+   Matriz de Breakpoints:
+     - Celular:           <= 640px
+     - Tablet:            641px - 1024px
+     - Laptop:            1025px - 1440px
+     - Escritorio Grande: > 1440px
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  color: var(--texto);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--verde-azulado);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Contenedor Principal Responsive --- */
+.contenedor-principal {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+}
+
+@media (min-width: 641px) {
+  .contenedor-principal {
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .contenedor-principal {
+    padding: 2rem 2rem;
+  }
+}
+
+@media (min-width: 1441px) {
+  .contenedor-principal {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2.5rem 0;
+  }
+}
+
+/* Padding y contención de overflow para móvil (<= 640px) */
+@media (max-width: 640px) {
+  .contenedor-principal {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem 0.75rem 72px 0.75rem;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+}
+
+/* --- Títulos --- */
+.titulo {
+  font-size: 1.75rem;
+  color: var(--verde-azulado);
+  line-height: 1.25;
+}
+.titulo b {
+  font-weight: 700;
+}
+.titulo span {
+  font-weight: 300;
+  color: var(--turquesa);
+}
+
+/* --- Botones accesibles (mínimo 44px de alto para mobile touch) --- */
+.boton-primario,
+.boton-secundario,
+.boton-terciario,
+.boton-peligro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: var(--radio);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+}
+
+.boton-primario {
+  background: var(--naranja);
+  color: #FFFFFF;
+}
+.boton-primario:hover:not(:disabled) {
+  background: var(--naranja-oscuro);
+  transform: translateY(-1px);
+}
+
+.boton-secundario {
+  background: var(--verde-azulado);
+  color: var(--blanco);
+}
+.boton-secundario:hover:not(:disabled) {
+  background: var(--turquesa);
+  transform: translateY(-1px);
+}
+
+.boton-terciario {
+  background: transparent;
+  color: var(--verde-azulado);
+  border: 2px solid var(--verde-azulado);
+}
+.boton-terciario:hover:not(:disabled) {
+  background: rgba(10, 108, 132, 0.08);
+}
+
+.boton-peligro {
+  background: var(--cancelada);
+  color: var(--blanco);
+}
+.boton-peligro:hover:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Botones táctiles cuadrados para mobile (44x44px) --- */
+.boton-tactil-cuadrado {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1.15rem;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  text-decoration: none !important;
+}
+.boton-tactil-cuadrado:active {
+  transform: scale(0.95);
+}
+.btn-tactil-tel {
+  background: var(--naranja);
+}
+.btn-tactil-lab {
+  background: var(--verde-azulado);
+}
+.btn-tactil-busq {
+  background: var(--cian);
+  color: var(--texto);
+}
+.btn-tactil-menu {
+  background: #EDF6F8;
+  color: var(--verde-azulado);
+  border: 1.5px solid #CFE2E8;
+  font-size: 1.35rem;
+}
+
+/* --- Tarjetas y contenedores --- */
+.tarjeta {
+  background: var(--blanco);
+  box-shadow: var(--sombra);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .tarjeta {
+    padding: 1.25rem 0.875rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+}
+
+/* --- Formularios y campos con feedback de error debajo --- */
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.etiqueta-campo {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--texto);
+  margin-bottom: 0.4rem;
+}
+
+.input-campo,
+.select-campo,
+.textarea-campo {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid #CFDEE3;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: var(--texto);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-campo:focus,
+.select-campo:focus,
+.textarea-campo:focus {
+  outline: none;
+  border-color: var(--turquesa);
+  box-shadow: 0 0 0 3px rgba(31, 165, 184, 0.20);
+}
+
+.input-campo.error,
+.select-campo.error,
+.textarea-campo.error {
+  border-color: var(--cancelada);
+  background: #FFF8F8;
+}
+
+.mensaje-error-campo {
+  color: var(--cancelada);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  display: block;
+}
+
+/* --- Alertas --- */
+.alerta-exito {
+  background: #E8F7F0;
+  color: #1E6B48;
+  border-left: 4px solid var(--confirmada);
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.alerta-error {
+  background: #FDF0F0;
+  color: #9C2E2B;
+  border-left: 4px solid var(--cancelada);
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* --- Badges / Insignias de Estado --- */
+.insignia {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.insignia-activo,
+.insignia-confirmada {
+  background: #E6F6EF;
+  color: var(--confirmada);
+}
+.insignia-pendiente,
+.insignia-programada {
+  background: #E6F8FC;
+  color: #0F8299;
+}
+.insignia-en_espera {
+  background: #FFF5E5;
+  color: #B56D00;
+}
+.insignia-atendida {
+  background: #E5F3F7;
+  color: var(--verde-azulado);
+}
+.insignia-cancelada,
+.insignia-inactivo {
+  background: #FDECEC;
+  color: var(--cancelada);
+}
+.insignia-inasistencia {
+  background: #EFF2F4;
+  color: var(--inasistencia);
+}
+.insignia-reprogramada,
+.insignia-postergada {
+  background: #FFF7DF;
+  color: #9C6E00;
+}
+
+/* --- Tablas responsive sin romper el ancho de pantalla --- */
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radio);
+  background: #FFFFFF;
+}
+
+.tabla-clinica {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.tabla-clinica th {
+  background: #EDF6F8;
+  color: var(--verde-azulado);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+  border-bottom: 2px solid #CFE5EC;
+  white-space: nowrap;
+}
+
+.tabla-clinica td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #E8F1F3;
+  font-size: 0.925rem;
+}
+
+.tabla-clinica tr:hover td {
+  background: #F9FCFD;
+}
+
+@media (max-width: 640px) {
+  .tabla-expandible-contenedor {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* --- Grid de Turnos --- */
+.grid-turnos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.slot-turno {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem;
+  border: 1.5px solid #CFDEE3;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: var(--texto);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot-turno.disponible:hover {
+  border-color: var(--naranja);
+  background: #FFF8F2;
+}
+
+.slot-turno.seleccionado {
+  border-color: var(--naranja);
+  background: var(--naranja);
+  color: #FFFFFF;
+}
+
+.slot-turno.ocupado {
+  background: #F0F4F6;
+  color: #95A5AB;
+  border-color: #E0E7E9;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* ============================================================
+   SECCIÓN: Buscador de Especialistas Responsive
+   ============================================================ */
+.buscador-seccion {
+  background: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  margin-bottom: 2rem;
+  border-top: 4px solid var(--naranja);
+}
+
+.buscador-formulario {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .buscador-formulario {
+    flex-direction: column;
+  }
+  .buscador-formulario input {
+    width: 100%;
+  }
+  .buscador-formulario button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 641px) {
+  .buscador-formulario {
+    flex-direction: row;
+    align-items: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .buscador-formulario input {
+    flex: 1;
+  }
+  .buscador-formulario button {
+    width: auto;
+    white-space: nowrap;
+    padding: 0 1.75rem;
+  }
+}
+
+/* ============================================================
+   SECCIÓN: Accesos Rápidos Responsive
+   Mobile: 2 columnas | Tablet: 3 columnas | Desktop: 4 a 6 columnas
+   ============================================================ */
+.accesos-rapidos-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .accesos-rapidos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .accesos-rapidos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .accesos-rapidos-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.tarjeta-acceso-rapido {
+  background: #FFFFFF;
+  border-radius: var(--radio);
+  padding: 1.15rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--sombra);
+  border: 1.5px solid transparent;
+  transition: all 0.25s ease;
+  min-height: 110px;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.tarjeta-acceso-rapido:hover {
+  transform: translateY(-3px);
+  border-color: var(--turquesa);
+  box-shadow: 0 8px 24px rgba(10, 108, 132, 0.16);
+}
+
+.tarjeta-acceso-rapido .icono-acceso {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.tarjeta-acceso-rapido .titulo-acceso {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--texto);
+  line-height: 1.25;
+}
+
+/* ============================================================
+   SECCIÓN: Carrusel de Especialidades y Servicios
+   Mobile: Scroll táctil suave dejando ver borde siguiente tarjeta
+   Desktop: Contenedor con flechas circulares de navegación
+   ============================================================ */
+.carrusel-contenedor {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0.25rem 1rem 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .carrusel-track {
+    scroll-snap-type: x mandatory;
+    padding-right: 2.5rem; /* Permite ver el borde de la siguiente tarjeta */
+  }
+  .carrusel-item {
+    scroll-snap-align: start;
+    flex: 0 0 80%; /* 80% del ancho para vislumbrar la siguiente */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .carrusel-item {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+
+@media (min-width: 1025px) {
+  .carrusel-item {
+    flex: 0 0 calc(33.333% - 0.67rem);
+  }
+}
+
+.carrusel-flecha {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid #CFE2E8;
+  color: var(--verde-azulado);
+  font-size: 1.4rem;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(10, 108, 132, 0.15);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.carrusel-flecha:hover {
+  background: var(--verde-azulado);
+  color: #FFFFFF;
+  border-color: var(--verde-azulado);
+}
+
+.carrusel-flecha.izq {
+  left: -20px;
+}
+
+.carrusel-flecha.der {
+  right: -20px;
+}
+
+@media (min-width: 641px) {
+  .carrusel-flecha {
+    display: flex;
+  }
+}
+
+/* ============================================================
+   SECCIÓN: Barra Fija Inferior (<= 640px) vs Botones Flotantes (> 640px)
+   ============================================================ */
+.barra-fija-inferior {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background: #FFFFFF;
+  box-shadow: 0 -4px 16px rgba(10, 108, 132, 0.12);
+  z-index: 40;
+}
+
+@media (max-width: 640px) {
+  .barra-fija-inferior {
+    display: flex;
+  }
+}
+
+.barra-inferior-btn {
+  flex: 1 1 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none !important;
+  min-height: 44px;
+}
+
+.barra-inferior-btn.agendar {
+  background: var(--naranja);
+  color: #FFFFFF;
+}
+
+.barra-inferior-btn.ayuda {
+  background: var(--verde-azulado);
+  color: #FFFFFF;
+}
+
+/* Botones Flotantes en Tablet y Desktop */
+.botones-flotantes-desktop {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 641px) {
+  .botones-flotantes-desktop {
+    display: flex;
+  }
+}
+
+.btn-flotante {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0 1.25rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(10, 108, 132, 0.22);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none !important;
+}
+
+.btn-flotante:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10, 108, 132, 0.30);
+}
+
+.btn-flotante.agendar {
+  background: var(--naranja);
+  color: #FFFFFF;
+}
+
+.btn-flotante.ayuda {
+  background: var(--verde-azulado);
+  color: #FFFFFF;
+}
+
+/* ============================================================
+   SECCIÓN: Menú Hamburguesa Full-Screen Drawer (<= 640px)
+   ============================================================ */
+.drawer-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--verde-azulado);
+  color: #FFFFFF;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow-y: auto;
+  animation: fadeInDrawer 0.25s ease-out;
+}
+
+@keyframes fadeInDrawer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1rem;
+}
+
+.drawer-cerrar-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.drawer-enlace {
+  display: block;
+  padding: 1rem 0;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.15rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.drawer-enlace:hover {
+  color: var(--cian);
+  text-decoration: none;
+}
+
+/* ============================================================
+   SECCIÓN: Modal Responsive
+   Celular: 100% Pantalla | Tablet/Desktop: Centrado con backdrop
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(18, 52, 59, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  backdrop-filter: blur(3px);
+}
+
+.modal-contenedor {
+  background: #FFFFFF;
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 0;
+  }
+  .modal-contenedor {
+    height: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .modal-overlay {
+    padding: 1.5rem;
+  }
+  .modal-contenedor {
+    max-width: 580px;
+    max-height: 90vh;
+    border-radius: var(--radio);
+    box-shadow: 0 16px 40px rgba(10, 108, 132, 0.25);
+    padding: 2rem;
+  }
+}

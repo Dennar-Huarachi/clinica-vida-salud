@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 2560 1600" 
+     width="2560" 
+     height="1600"
+     style="background-color: #FFFFFF; font-family: 'Segoe UI', Arial, sans-serif;">
+
+  <defs>
+    <pattern id="eaGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.2" fill="#E2E8F0" />
+    </pattern>
+
+    <linearGradient id="eaHeaderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EBF4FA" />
+      <stop offset="100%" stop-color="#D3E6F5" />
+    </linearGradient>
+
+    <linearGradient id="eaPkgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FB" />
+      <stop offset="100%" stop-color="#DAEAF5" />
+    </linearGradient>
+
+    <filter id="eaShadow" x="-2%" y="-2%" width="105%" height="106%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="3" dy="4" stdDeviation="3.5" flood-color="#0F172A" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2560" height="1600" fill="#FFFFFF" />
+  <rect width="2560" height="1600" fill="url(#eaGrid)" opacity="0.6" />
+
+  <!-- Top Header Banner -->
+  <g id="header_banner" filter="url(#eaShadow)">
+    <rect x="50" y="40" width="2460" height="110" rx="4" fill="#FFFFFF" stroke="#234C73" stroke-width="2" />
+    <rect x="50" y="40" width="16" height="110" fill="#234C73" />
+
+    <text x="90" y="86" font-size="28" font-weight="bold" fill="#0A2540" letter-spacing="0.5">
+      PAQUETE 04: CITAS, NOTIFICACIONES Y PAGOS — CL&#205;NICA VIDA SALUD
+    </text>
+    <text x="90" y="122" font-size="16" fill="#4B6584" font-weight="600">
+      Flujo de Citas M&#233;dicas, Pasarela de Pagos (Stripe/QR) y Sistema de Alertas Push/In-App
+    </text>
+
+    <!-- Metadata Badges -->
+    <g transform="translate(1740, 60)">
+      <rect x="0" y="0" width="220" height="70" rx="3" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.2"/>
+      <text x="14" y="28" font-size="12" font-weight="bold" fill="#64748B">SISTEMA</text>
+      <text x="14" y="54" font-size="16" font-weight="bold" fill="#0F172A">Cl&#237;nica Vida Salud</text>
+
+      <rect x="240" y="0" width="240" height="70" rx="3" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.2"/>
+      <text x="254" y="28" font-size="12" font-weight="bold" fill="#64748B">EST&#193;NDAR / FECHA</text>
+      <text x="254" y="54" font-size="16" font-weight="bold" fill="#0F172A">Enterprise Architect 2.5</text>
+
+      <rect x="500" y="0" width="250" height="70" rx="3" fill="#EBF3FA" stroke="#234C73" stroke-width="1.2"/>
+      <text x="514" y="28" font-size="12" font-weight="bold" fill="#0F4C81">MOTOR BD</text>
+      <text x="514" y="54" font-size="16" font-weight="bold" fill="#00264D">PostgreSQL Nativo</text>
+    </g>
+  </g>
+
+  <!-- Relationships Layer -->
+  <g id="relations_layer">
+    
+  <!-- Relation: estados_cita -> citas -->
+  <g>
+    <path d="M 560 400 L 880 400" fill="none" stroke="#2B547E" 
+          stroke-width="2.4" 
+          stroke-dasharray="none" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="576" y="390" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="840" y="390" font-size="16" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(663.25, 385)">
+      <rect x="0" y="0" width="113.5" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="56.75" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        clasifica
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Relation: citas -> pagos_cita -->
+  <g>
+    <path d="M 1400 350 L 1720 350" fill="none" stroke="#2B547E" 
+          stroke-width="2.4" 
+          stroke-dasharray="none" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="1416" y="340" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="1680" y="340" font-size="16" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(1470, 335)">
+      <rect x="0" y="0" width="180" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="90" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        liquida mediante
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Relation: pacientes -> citas -->
+  <g>
+    <path d="M 460 840 L 680 840 L 680 490 L 880 490" fill="none" stroke="#64748B" 
+          stroke-width="2" 
+          stroke-dasharray="6,4" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="476" y="830" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="840" y="480" font-size="16" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(628, 650)">
+      <rect x="0" y="0" width="104" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="52" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        solicita
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Relation: medicos -> citas -->
+  <g>
+    <path d="M 460 990 L 750 990 L 750 560 L 880 560" fill="none" stroke="#64748B" 
+          stroke-width="2" 
+          stroke-dasharray="6,4" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="476" y="980" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="840" y="550" font-size="16" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(702.75, 760)">
+      <rect x="0" y="0" width="94.5" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="47.25" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        atiende
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Relation: usuarios -> citas -->
+  <g>
+    <path d="M 460 1140 L 820 1140 L 820 630 L 880 630" fill="none" stroke="#64748B" 
+          stroke-width="2" 
+          stroke-dasharray="6,4" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="476" y="1130" font-size="16" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="840" y="620" font-size="16" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(730, 870)">
+      <rect x="0" y="0" width="180" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="90" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        agenda / reserva
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Relation: usuarios -> notificaciones -->
+  <g>
+    <path d="M 460 1160 L 880 1160" fill="none" stroke="#64748B" 
+          stroke-width="2" 
+          stroke-dasharray="6,4" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="476" y="1150" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="840" y="1150" font-size="16" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(594.25, 1145)">
+      <rect x="0" y="0" width="151.5" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="75.75" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        recibe alerta
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Relation: citas -> atenciones_clinicas -->
+  <g>
+    <path d="M 1400 650 L 1560 650 L 1560 890 L 1720 890" fill="none" stroke="#64748B" 
+          stroke-width="2" 
+          stroke-dasharray="6,4" 
+          stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="1416" y="640" font-size="16" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="1680" y="880" font-size="16" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Verb Badge -->
+    <g transform="translate(1446.25, 755)">
+      <rect x="0" y="0" width="227.5" height="30" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" />
+      <text x="113.75" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A8A">
+        origina atenci&#243;n
+      </text>
+    </g>
+  </g>
+
+  </g>
+
+  <!-- Classes Layer -->
+  <g id="classes_layer" filter="url(#eaShadow)">
+    
+  <!-- Class: estados_cita -->
+  <g id="table_estados_cita">
+    <!-- Class Outer Box -->
+    <rect x="100" y="280" width="460" height="298" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="2.4" rx="3" />
+
+    <!-- Class Header Compartment -->
+    <rect x="100" y="280" width="460" height="70" 
+          fill="url(#eaHeaderGrad)" rx="3" />
+    <line x1="100" y1="350" x2="560" y2="350" 
+          stroke="#234C73" stroke-width="2.4" />
+
+    <!-- Stereotype «table» -->
+    <text x="330" y="306" text-anchor="middle" 
+          font-size="16" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Table Name -->
+    <text x="330" y="334" text-anchor="middle" 
+          font-size="21" font-weight="bold" fill="#00264D" letter-spacing="0.4">
+      estados_cita
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_estados_cita">
+      <g transform="translate(118, 378)">
+        <circle cx="8" cy="-6" r="5.5" fill="none" stroke="#D97706" stroke-width="1.8" />
+        <line x1="13.5" y1="-6" x2="22" y2="-6" stroke="#D97706" stroke-width="1.8" />
+        <line x1="18" y1="-6" x2="18" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <line x1="22" y1="-6" x2="22" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <text x="32" y="0" font-size="18" font-weight="bold" fill="#0F4C81">
+          + id_estado_cita [PK]
+        </text>
+      </g>
+      <line x1="116" y1="394" x2="544" y2="394" 
+            stroke="#A5C4DF" stroke-width="1.2" stroke-dasharray="3,3" />
+      <text x="132" y="412" font-size="17" fill="#1F2937">
+        codigo
+      </text>
+      <text x="132" y="446" font-size="17" fill="#1F2937">
+        nombre
+      </text>
+      <text x="132" y="480" font-size="17" fill="#1F2937">
+        descripcion
+      </text>
+      <text x="132" y="514" font-size="17" fill="#1F2937">
+        created_at
+      </text>
+      <text x="132" y="548" font-size="17" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Class: citas -->
+  <g id="table_citas">
+    <!-- Class Outer Box -->
+    <rect x="880" y="220" width="520" height="536" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="2.4" rx="3" />
+
+    <!-- Class Header Compartment -->
+    <rect x="880" y="220" width="520" height="70" 
+          fill="url(#eaHeaderGrad)" rx="3" />
+    <line x1="880" y1="290" x2="1400" y2="290" 
+          stroke="#234C73" stroke-width="2.4" />
+
+    <!-- Stereotype «table» -->
+    <text x="1140" y="246" text-anchor="middle" 
+          font-size="16" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Table Name -->
+    <text x="1140" y="274" text-anchor="middle" 
+          font-size="21" font-weight="bold" fill="#00264D" letter-spacing="0.4">
+      citas
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_citas">
+      <g transform="translate(898, 318)">
+        <circle cx="8" cy="-6" r="5.5" fill="none" stroke="#D97706" stroke-width="1.8" />
+        <line x1="13.5" y1="-6" x2="22" y2="-6" stroke="#D97706" stroke-width="1.8" />
+        <line x1="18" y1="-6" x2="18" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <line x1="22" y1="-6" x2="22" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <text x="32" y="0" font-size="18" font-weight="bold" fill="#0F4C81">
+          + id_cita [PK]
+        </text>
+      </g>
+      <line x1="896" y1="334" x2="1384" y2="334" 
+            stroke="#A5C4DF" stroke-width="1.2" stroke-dasharray="3,3" />
+      <text x="912" y="352" font-size="17" fill="#1F2937">
+        codigo_cita
+      </text>
+      <text x="912" y="386" font-size="17" fill="#1F2937">
+        fecha_cita
+      </text>
+      <text x="912" y="420" font-size="17" fill="#1F2937">
+        hora_inicio
+      </text>
+      <text x="912" y="454" font-size="17" fill="#1F2937">
+        hora_fin
+      </text>
+      <text x="912" y="488" font-size="17" fill="#1F2937">
+        motivo_consulta
+      </text>
+      <text x="912" y="522" font-size="17" fill="#1F2937">
+        observaciones
+      </text>
+      <text x="912" y="556" font-size="17" fill="#1F2937">
+        es_postergada
+      </text>
+      <text x="912" y="590" font-size="17" fill="#1F2937">
+        fecha_expiracion_reserva
+      </text>
+      <text x="912" y="624" font-size="17" fill="#1F2937">
+        pago_confirmado
+      </text>
+      <text x="912" y="658" font-size="17" fill="#1F2937">
+        estado
+      </text>
+      <text x="912" y="692" font-size="17" fill="#1F2937">
+        created_at
+      </text>
+      <text x="912" y="726" font-size="17" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Class: pagos_cita -->
+  <g id="table_pagos_cita">
+    <!-- Class Outer Box -->
+    <rect x="1720" y="220" width="500" height="434" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="2.4" rx="3" />
+
+    <!-- Class Header Compartment -->
+    <rect x="1720" y="220" width="500" height="70" 
+          fill="url(#eaHeaderGrad)" rx="3" />
+    <line x1="1720" y1="290" x2="2220" y2="290" 
+          stroke="#234C73" stroke-width="2.4" />
+
+    <!-- Stereotype «table» -->
+    <text x="1970" y="246" text-anchor="middle" 
+          font-size="16" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Table Name -->
+    <text x="1970" y="274" text-anchor="middle" 
+          font-size="21" font-weight="bold" fill="#00264D" letter-spacing="0.4">
+      pagos_cita
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_pagos_cita">
+      <g transform="translate(1738, 318)">
+        <circle cx="8" cy="-6" r="5.5" fill="none" stroke="#D97706" stroke-width="1.8" />
+        <line x1="13.5" y1="-6" x2="22" y2="-6" stroke="#D97706" stroke-width="1.8" />
+        <line x1="18" y1="-6" x2="18" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <line x1="22" y1="-6" x2="22" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <text x="32" y="0" font-size="18" font-weight="bold" fill="#0F4C81">
+          + id_pago [PK]
+        </text>
+      </g>
+      <line x1="1736" y1="334" x2="2204" y2="334" 
+            stroke="#A5C4DF" stroke-width="1.2" stroke-dasharray="3,3" />
+      <text x="1752" y="352" font-size="17" fill="#1F2937">
+        monto
+      </text>
+      <text x="1752" y="386" font-size="17" fill="#1F2937">
+        metodo_pago
+      </text>
+      <text x="1752" y="420" font-size="17" fill="#1F2937">
+        nro_transaccion
+      </text>
+      <text x="1752" y="454" font-size="17" fill="#1F2937">
+        estado_pago
+      </text>
+      <text x="1752" y="488" font-size="17" fill="#1F2937">
+        detalles_pasarela
+      </text>
+      <text x="1752" y="522" font-size="17" fill="#1F2937">
+        fecha_pago
+      </text>
+      <text x="1752" y="556" font-size="17" fill="#1F2937">
+        fecha_reembolso
+      </text>
+      <text x="1752" y="590" font-size="17" fill="#1F2937">
+        created_at
+      </text>
+      <text x="1752" y="624" font-size="17" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+
+  <!-- Class: notificaciones -->
+  <g id="table_notificaciones">
+    <!-- Class Outer Box -->
+    <rect x="880" y="920" width="480" height="400" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="2.4" rx="3" />
+
+    <!-- Class Header Compartment -->
+    <rect x="880" y="920" width="480" height="70" 
+          fill="url(#eaHeaderGrad)" rx="3" />
+    <line x1="880" y1="990" x2="1360" y2="990" 
+          stroke="#234C73" stroke-width="2.4" />
+
+    <!-- Stereotype «table» -->
+    <text x="1120" y="946" text-anchor="middle" 
+          font-size="16" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Table Name -->
+    <text x="1120" y="974" text-anchor="middle" 
+          font-size="21" font-weight="bold" fill="#00264D" letter-spacing="0.4">
+      notificaciones
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_notificaciones">
+      <g transform="translate(898, 1018)">
+        <circle cx="8" cy="-6" r="5.5" fill="none" stroke="#D97706" stroke-width="1.8" />
+        <line x1="13.5" y1="-6" x2="22" y2="-6" stroke="#D97706" stroke-width="1.8" />
+        <line x1="18" y1="-6" x2="18" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <line x1="22" y1="-6" x2="22" y2="-2" stroke="#D97706" stroke-width="1.8" />
+        <text x="32" y="0" font-size="18" font-weight="bold" fill="#0F4C81">
+          + id_notificacion [PK]
+        </text>
+      </g>
+      <line x1="896" y1="1034" x2="1344" y2="1034" 
+            stroke="#A5C4DF" stroke-width="1.2" stroke-dasharray="3,3" />
+      <text x="912" y="1052" font-size="17" fill="#1F2937">
+        tipo
+      </text>
+      <text x="912" y="1086" font-size="17" fill="#1F2937">
+        titulo
+      </text>
+      <text x="912" y="1120" font-size="17" fill="#1F2937">
+        mensaje
+      </text>
+      <text x="912" y="1154" font-size="17" fill="#1F2937">
+        leido
+      </text>
+      <text x="912" y="1188" font-size="17" fill="#1F2937">
+        fecha_leido
+      </text>
+      <text x="912" y="1222" font-size="17" fill="#1F2937">
+        metadata
+      </text>
+      <text x="912" y="1256" font-size="17" fill="#1F2937">
+        created_at
+      </text>
+      <text x="912" y="1290" font-size="17" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  </g>
+
+  <!-- External Classes Layer -->
+  <g id="externals_layer">
+    
+  <!-- External Class Reference: pacientes -->
+  <g id="ext_pacientes">
+    <rect x="100" y="800" width="360" height="85" 
+          fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="6,4" rx="4" />
+    <text x="280" y="826" text-anchor="middle" font-size="13" font-style="italic" fill="#64748B">
+      &#171;external table&#187;
+    </text>
+    <text x="280" y="852" text-anchor="middle" font-size="18" font-weight="bold" fill="#334155">
+      pacientes
+    </text>
+    <text x="280" y="874" text-anchor="middle" font-size="13" fill="#64748B">
+      Paquete: Pacientes y Perfil
+    </text>
+  </g>
+
+
+  <!-- External Class Reference: medicos -->
+  <g id="ext_medicos">
+    <rect x="100" y="950" width="360" height="85" 
+          fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="6,4" rx="4" />
+    <text x="280" y="976" text-anchor="middle" font-size="13" font-style="italic" fill="#64748B">
+      &#171;external table&#187;
+    </text>
+    <text x="280" y="1002" text-anchor="middle" font-size="18" font-weight="bold" fill="#334155">
+      medicos
+    </text>
+    <text x="280" y="1024" text-anchor="middle" font-size="13" fill="#64748B">
+      Paquete: Catálogos Médicos
+    </text>
+  </g>
+
+
+  <!-- External Class Reference: usuarios -->
+  <g id="ext_usuarios">
+    <rect x="100" y="1100" width="360" height="85" 
+          fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="6,4" rx="4" />
+    <text x="280" y="1126" text-anchor="middle" font-size="13" font-style="italic" fill="#64748B">
+      &#171;external table&#187;
+    </text>
+    <text x="280" y="1152" text-anchor="middle" font-size="18" font-weight="bold" fill="#334155">
+      usuarios
+    </text>
+    <text x="280" y="1174" text-anchor="middle" font-size="13" fill="#64748B">
+      Paquete: Acceso y Cuentas
+    </text>
+  </g>
+
+
+  <!-- External Class Reference: atenciones_clinicas -->
+  <g id="ext_atenciones_clinicas">
+    <rect x="1720" y="850" width="440" height="95" 
+          fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="6,4" rx="4" />
+    <text x="1940" y="876" text-anchor="middle" font-size="13" font-style="italic" fill="#64748B">
+      &#171;external table&#187;
+    </text>
+    <text x="1940" y="902" text-anchor="middle" font-size="18" font-weight="bold" fill="#334155">
+      atenciones_clinicas
+    </text>
+    <text x="1940" y="924" text-anchor="middle" font-size="13" fill="#64748B">
+      Paquete: Historia Clínica
+    </text>
+  </g>
+
+  </g>
+
+  <!-- Legend Box -->
+  <g id="legend_box" transform="translate(1800, 1180)" filter="url(#eaShadow)">
+    <rect x="0" y="0" width="640" height="320" rx="4" fill="#FFFFFF" stroke="#234C73" stroke-width="2" />
+    <rect x="0" y="0" width="640" height="42" fill="url(#eaHeaderGrad)" rx="4" />
+    <text x="18" y="28" font-size="16" font-weight="bold" fill="#00264D">CONVENCIONES UML ENTERPRISE ARCHITECT</text>
+
+    <g transform="translate(20, 68)">
+      <circle cx="10" cy="-6" r="6" fill="none" stroke="#D97706" stroke-width="2" />
+      <line x1="16" y1="-6" x2="26" y2="-6" stroke="#D97706" stroke-width="2" />
+      <text x="36" y="0" font-size="16" font-weight="bold" fill="#0F4C81">+ id_columna [PK]</text>
+      <text x="36" y="24" font-size="13.5" fill="#64748B">Clave Primaria f&#237;sica de la tabla</text>
+
+      <text x="36" y="64" font-size="16" fill="#1F2937">nombre_columna</text>
+      <text x="36" y="88" font-size="13.5" fill="#64748B">Atributo propio (sin tipos ni llaves for&#225;neas)</text>
+
+      <line x1="0" y1="130" x2="60" y2="130" stroke="#2B547E" stroke-width="2.6" />
+      <text x="74" y="136" font-size="15" font-weight="bold" fill="#0F172A">1 &#8226;&#8226; [verbo] &#8226;&#8226; 0..*</text>
+      <text x="0" y="162" font-size="13.5" fill="#64748B">Asociaci&#243;n relacional con multiplicidad</text>
+
+      <rect x="0" y="185" width="600" height="52" rx="3" fill="#F8FAFC" stroke="#E2E8F0" />
+      <text x="14" y="208" font-size="14" font-weight="bold" fill="#0369A1">REGLA PURA DE MODELADO UML:</text>
+      <text x="14" y="228" font-size="13.5" fill="#475569">Las llaves for&#225;neas no se listan en atributos; se expresan por asociaciones.</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,401 @@
+@startuml Diagrama_Base_Datos_Clinica_Vida_Salud
+!theme plain
+
+' ============================================================================
+' CONFIGURACIÓN VISUAL ESTILO ENTERPRISE ARCHITECT UML 2.5
+' ============================================================================
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 12
+skinparam roundCorner 3
+skinparam shadowing true
+skinparam packageTitleAlignment left
+skinparam linetype ortho
+
+' Colores Enterprise Architect
+skinparam package {
+  BackgroundColor #FBFCFE
+  BorderColor #5B7C99
+  FontColor #16325C
+  FontStyle bold
+  FontSize 13
+}
+
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #234C73
+  HeaderBackgroundColor #D8EFFF
+  FontColor #00264D
+  FontStyle bold
+  FontSize 13
+  AttributeFontColor #1F2937
+  AttributeFontSize 11
+  StereotypeFontColor #4B6584
+  StereotypeFontSize 10
+  StereotypeFontStyle italic
+}
+
+skinparam arrow {
+  Color #2B547E
+  FontColor #1E3A8A
+  FontSize 11
+  FontStyle bold
+}
+
+hide methods
+hide circle
+
+title DIAGRAMA DE CLASES DE BASE DE DATOS — CLÍNICA VIDA SALUD\nModelo Relacional PostgreSQL 18 (23 Tablas Físicas) — Notación Enterprise Architect
+
+' ============================================================================
+' 1. PAQUETE: ACCESO Y CUENTAS (SEGURIDAD Y USUARIOS)
+' ============================================================================
+package "Acceso y cuentas" as pkg_acceso {
+
+  class roles << (E,#D8EFFF) >> {
+    + id_rol [PK]
+    --
+    nombre
+    descripcion
+    created_at
+    updated_at
+  }
+
+  class permisos << (E,#D8EFFF) >> {
+    + id_permiso [PK]
+    --
+    modulo
+    nombre
+    slug
+    descripcion
+    created_at
+    updated_at
+  }
+
+  class rol_permiso << (E,#D8EFFF) >> {
+    + id_rol, id_permiso [PK]
+    --
+    created_at
+    updated_at
+  }
+
+  class usuarios << (E,#D8EFFF) >> {
+    + id_usuario [PK]
+    --
+    nombre_usuario
+    correo
+    contrasena_hash
+    debe_cambiar_contrasena
+    estado
+    ultimo_acceso
+    token_sesion
+    created_at
+    updated_at
+  }
+
+}
+
+' ============================================================================
+' 2. PAQUETE: PACIENTES Y PERFIL (DATOS DEL PACIENTE)
+' ============================================================================
+package "Pacientes y perfil" as pkg_pacientes {
+
+  class personas << (E,#D8EFFF) >> {
+    + id_persona [PK]
+    --
+    ci
+    nombres
+    apellidos
+    fecha_nacimiento
+    sexo
+    telefono
+    correo
+    direccion
+    created_at
+    updated_at
+  }
+
+  class pacientes << (E,#D8EFFF) >> {
+    + id_paciente [PK]
+    --
+    codigo_historia
+    grupo_sanguineo
+    estado
+    created_at
+    updated_at
+  }
+
+  class informacion_medica_paciente << (E,#D8EFFF) >> {
+    + id_informacion_medica [PK]
+    --
+    alergias
+    enfermedades_cronicas
+    medicamentos_actuales
+    antecedentes_familiares
+    observaciones
+    created_at
+    updated_at
+  }
+
+  class contactos_emergencia << (E,#D8EFFF) >> {
+    + id_contacto_emergencia [PK]
+    --
+    nombre_completo
+    relacion
+    telefono
+    direccion
+    es_principal
+    created_at
+    updated_at
+  }
+
+}
+
+' ============================================================================
+' 3. PAQUETE: CATÁLOGOS Y HORARIOS (GESTIÓN MÉDICA)
+' ============================================================================
+package "Catálogos y horarios médicos" as pkg_catalogos {
+
+  class medicos << (E,#D8EFFF) >> {
+    + id_medico [PK]
+    --
+    nro_matricula
+    biografia
+    estado
+    created_at
+    updated_at
+  }
+
+  class especialidades << (E,#D8EFFF) >> {
+    + id_especialidad [PK]
+    --
+    nombre
+    nombre_normalizado
+    descripcion
+    duracion_turno_minutos
+    reservable_en_linea
+    estado
+    created_at
+    updated_at
+  }
+
+  class medico_especialidad << (E,#D8EFFF) >> {
+    + id_medico_especialidad [PK]
+    --
+    created_at
+    updated_at
+  }
+
+  class horarios_atencion << (E,#D8EFFF) >> {
+    + id_horario [PK]
+    --
+    dia_semana
+    hora_inicio
+    hora_fin
+    duracion_intervalo_minutos
+    estado
+    created_at
+    updated_at
+  }
+
+  class suspensiones_horario << (E,#D8EFFF) >> {
+    + id_suspension [PK]
+    --
+    fecha_inicio
+    fecha_fin
+    motivo
+    estado_citas_accion
+    created_at
+    updated_at
+  }
+
+  class bloqueos_clinica << (E,#D8EFFF) >> {
+    + id_bloqueo [PK]
+    --
+    titulo
+    motivo
+    fecha_inicio
+    fecha_fin
+    aplica_a_todos
+    estado
+    created_at
+    updated_at
+  }
+
+}
+
+' ============================================================================
+' 4. PAQUETE: CITAS Y NOTIFICACIONES (ATENCIÓN AMBULATORIA Y PAGOS)
+' ============================================================================
+package "Citas, notificaciones y pagos" as pkg_citas {
+
+  class estados_cita << (E,#D8EFFF) >> {
+    + id_estado_cita [PK]
+    --
+    codigo
+    nombre
+    descripcion
+    created_at
+    updated_at
+  }
+
+  class citas << (E,#D8EFFF) >> {
+    + id_cita [PK]
+    --
+    codigo_cita
+    fecha_cita
+    hora_inicio
+    hora_fin
+    motivo_consulta
+    observaciones
+    es_postergada
+    fecha_expiracion_reserva
+    pago_confirmado
+    estado
+    created_at
+    updated_at
+  }
+
+  class pagos_cita << (E,#D8EFFF) >> {
+    + id_pago [PK]
+    --
+    monto
+    metodo_pago
+    nro_transaccion
+    estado_pago
+    detalles_pasarela
+    fecha_pago
+    fecha_reembolso
+    created_at
+    updated_at
+  }
+
+  class notificaciones << (E,#D8EFFF) >> {
+    + id_notificacion [PK]
+    --
+    tipo
+    titulo
+    mensaje
+    leido
+    fecha_leido
+    metadata
+    created_at
+    updated_at
+  }
+
+}
+
+' ============================================================================
+' 5. PAQUETE: HISTORIA CLÍNICA Y AUDITORÍA
+' ============================================================================
+package "Historia clínica y auditoría" as pkg_historia_admin {
+
+  class atenciones_clinicas << (E,#D8EFFF) >> {
+    + id_atencion [PK]
+    --
+    motivo_atencion
+    examen_fisico
+    diagnostico
+    tratamiento_indicaciones
+    receta_medica
+    fecha_atencion
+    created_at
+    updated_at
+  }
+
+  class resultados_laboratorio << (E,#D8EFFF) >> {
+    + id_resultado [PK]
+    --
+    tipo_estudio
+    descripcion
+    archivo_adjunto
+    fecha_estudio
+    created_at
+    updated_at
+  }
+
+  class bitacora_auditoria << (E,#D8EFFF) >> {
+    + id_bitacora [PK]
+    --
+    caso_uso
+    accion
+    tabla_afectada
+    registro_id
+    datos_anteriores
+    datos_nuevos
+    ip_origen
+    user_agent
+    fecha_hora
+    created_at
+    updated_at
+  }
+
+  class copias_seguridad << (E,#D8EFFF) >> {
+    + id_copia [PK]
+    --
+    nombre_archivo
+    ruta_almacenamiento
+    tamano_bytes
+    tipo
+    estado
+    created_at
+    updated_at
+  }
+
+  class parametros_sistema << (E,#D8EFFF) >> {
+    + id_parametro [PK]
+    --
+    clave
+    valor
+    descripcion
+    tipo_dato
+    created_at
+    updated_at
+  }
+
+}
+
+' ============================================================================
+' RELACIONES ENTRE TABLAS (ASOCIACIONES CON VERBOS Y CARDINALIDADES)
+' ============================================================================
+
+' --- Seguridad y Acceso ---
+roles "1" --> "0..*" usuarios : asigna rol a
+roles "1" --> "0..*" rol_permiso : posee
+permisos "1" --> "0..*" rol_permiso : concedido en
+usuarios "0..1" --> "1" personas : accede como
+
+' --- Pacientes y Perfil ---
+personas "1" --> "0..1" pacientes : se registra como
+personas "1" --> "0..1" medicos : se acredita como
+pacientes "1" --> "0..1" informacion_medica_paciente : posee ficha
+pacientes "1" --> "0..*" contactos_emergencia : registra
+
+' --- Catálogos y Horarios Médicos ---
+medicos "1" --> "1..*" medico_especialidad : ejerce
+especialidades "1" --> "0..*" medico_especialidad : agrupa
+medicos "1" --> "0..*" horarios_atencion : cumple
+especialidades "1" --> "0..*" horarios_atencion : se programa en
+medicos "1" --> "0..*" suspensiones_horario : declara
+medicos "0..1" --> "0..*" bloqueos_clinica : afectado por
+
+' --- Citas, Pagos y Notificaciones ---
+estados_cita "1" --> "0..*" citas : clasifica
+pacientes "1" --> "0..*" citas : solicita
+medicos "1" --> "0..*" citas : atiende
+especialidades "1" --> "0..*" citas : corresponde a
+usuarios "0..1" --> "0..*" citas : agenda / reserva
+citas "1" --> "0..*" pagos_cita : liquida mediante
+usuarios "1" --> "0..*" notificaciones : recibe
+
+' --- Historia Clínica y Diagnóstico ---
+citas "1" --> "0..1" atenciones_clinicas : origina
+pacientes "1" --> "0..*" atenciones_clinicas : recibe atención
+medicos "1" --> "0..*" atenciones_clinicas : registra consulta
+pacientes "1" --> "0..*" resultados_laboratorio : pertenece a
+atenciones_clinicas "0..1" --> "0..*" resultados_laboratorio : deriva en
+
+' --- Auditoría y Respaldo ---
+usuarios "0..1" --> "0..*" bitacora_auditoria : genera traza
+usuarios "0..1" --> "0..*" copias_seguridad : ejecuta respaldo
+
+@enduml

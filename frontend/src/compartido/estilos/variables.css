@@ -1,0 +1,29 @@
+/* ============================================================
+   Variables globales del diseño — Clínica Vida Salud
+   Usar SIEMPRE estas variables; nunca escribir colores sueltos.
+   ============================================================ */
+
+:root {
+  /* Paleta principal (tonos turquesa y verde azulado) */
+  --verde-azulado: #0A6C84;
+  --turquesa: #1FA5B8;
+  --cian: #22C3E0;
+  --naranja: #F28C1E;          /* SOLO para la acción principal */
+  --naranja-oscuro: #C75F00;
+  --fondo: #F4FAFB;
+  --blanco: #FFFFFF;
+  --texto: #12343B;
+  --texto-sec: #5B7078;
+
+  /* Estados de una cita médica */
+  --programada: #22C3E0;
+  --confirmada: #2E9E6B;
+  --atendida: #0A6C84;
+  --cancelada: #D9534F;
+  --inasistencia: #7A8A90;
+  --postergada: #E0A100;
+
+  /* Formas y sombras */
+  --radio: 14px;
+  --sombra: 0 4px 16px rgba(10, 108, 132, 0.10);
+}

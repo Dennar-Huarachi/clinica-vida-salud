@@ -1,0 +1,2352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 6900 4320" 
+     width="6900" 
+     height="4320"
+     style="background-color: #FFFFFF; font-family: 'Segoe UI', Arial, sans-serif;">
+
+  <defs>
+    <!-- Background grid pattern -->
+    <pattern id="eaGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.6" fill="#E2E8F0" />
+    </pattern>
+
+    <!-- Header Gradient for EA Class Boxes -->
+    <linearGradient id="eaHeaderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EBF4FA" />
+      <stop offset="100%" stop-color="#D3E6F5" />
+    </linearGradient>
+
+    <!-- Package Header Tab Gradient -->
+    <linearGradient id="eaPkgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FB" />
+      <stop offset="100%" stop-color="#DAEAF5" />
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="eaShadow" x="-2%" y="-2%" width="105%" height="106%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="4" dy="6" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.14" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background with Grid -->
+  <rect width="6900" height="4320" fill="#FFFFFF" />
+  <rect width="6900" height="4320" fill="url(#eaGrid)" opacity="0.65" />
+
+  <!-- ========================================== -->
+  <!-- TOP HEADER / BANNER (ENTERPRISE ARCHITECT) -->
+  <!-- ========================================== -->
+  <g id="diagram_header">
+    <rect x="80" y="60" width="6740" height="200" rx="8" fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" filter="url(#eaShadow)" />
+    <rect x="80" y="60" width="28" height="200" fill="#234C73" />
+    
+    <!-- Title & System Name -->
+    <text x="150" y="144" font-size="48" font-weight="bold" fill="#0A2540" letter-spacing="1">
+      DIAGRAMA DE CLASES DE BASE DE DATOS &#8212; CL&#205;NICA VIDA SALUD
+    </text>
+    <text x="150" y="208" font-size="26" fill="#4B6584" font-weight="600">
+      Modelo Relacional Integral PostgreSQL 18 &#8226; 23 Tablas F&#237;sicas &#8226; Agrupaci&#243;n por Paquetes L&#243;gicos &#8226; Notaci&#243;n Enterprise Architect UML 2.5
+    </text>
+
+    <!-- Metadata Badges -->
+    <g transform="translate(4940, 100)">
+      <rect x="0" y="0" width="320" height="120" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+      <text x="24" y="48" font-size="20" font-weight="bold" fill="#64748B">PROYECTO</text>
+      <text x="24" y="92" font-size="26" font-weight="bold" fill="#0F172A">Cl&#237;nica Vida Salud</text>
+
+      <rect x="350" y="0" width="280" height="120" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+      <text x="374" y="48" font-size="20" font-weight="bold" fill="#64748B">VERSI&#211;N / FECHA</text>
+      <text x="374" y="92" font-size="26" font-weight="bold" fill="#0F172A">v2.0 &#8226; 2026-10-24</text>
+
+      <rect x="660" y="0" width="320" height="120" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+      <text x="684" y="48" font-size="20" font-weight="bold" fill="#64748B">MOTOR BD</text>
+      <text x="684" y="92" font-size="26" font-weight="bold" fill="#0F172A">PostgreSQL Nativo</text>
+
+      <rect x="1010" y="0" width="320" height="120" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+      <text x="1034" y="48" font-size="20" font-weight="bold" fill="#64748B">DISE&#209;O Y ESTILO</text>
+      <text x="1034" y="92" font-size="26" font-weight="bold" fill="#0F172A">Enterprise Architect</text>
+
+      <rect x="1360" y="0" width="460" height="120" rx="6" fill="#EBF3FA" stroke="#234C73" stroke-width="2"/>
+      <text x="1384" y="48" font-size="20" font-weight="bold" fill="#0F4C81">ARQUITECTURA</text>
+      <text x="1384" y="92" font-size="26" font-weight="bold" fill="#00264D">Package-by-Feature (CU)</text>
+    </g>
+  </g>
+
+  <!-- Package: Paquete: Acceso y Cuentas (Seguridad y Usuarios) -->
+  <g id="pkg_acceso">
+    <!-- Package Tab -->
+    <path d="M 80 320 
+             L 80 264 
+             Q 80 256 88 256 
+             L 896 256 
+             L 920 320 Z" 
+          fill="url(#eaPkgGrad)" stroke="#5B7C99" stroke-width="3.2" />
+    <text x="108" y="298" font-size="24" font-weight="bold" fill="#16325C">
+      Paquete: Acceso y Cuentas (Seguridad y Usuarios)
+    </text>
+
+    <!-- Package Body -->
+    <rect x="80" y="320" width="1560" height="1780" 
+          fill="#FBFCFE" stroke="#5B7C99" stroke-width="3" stroke-dasharray="12,8" rx="4" />
+  </g>
+
+  <!-- Package: Paquete: Pacientes y Perfil (Datos del Paciente) -->
+  <g id="pkg_pacientes">
+    <!-- Package Tab -->
+    <path d="M 1720 320 
+             L 1720 264 
+             Q 1720 256 1728 256 
+             L 2536 256 
+             L 2560 320 Z" 
+          fill="url(#eaPkgGrad)" stroke="#5B7C99" stroke-width="3.2" />
+    <text x="1748" y="298" font-size="24" font-weight="bold" fill="#16325C">
+      Paquete: Pacientes y Perfil (Datos del Paciente)
+    </text>
+
+    <!-- Package Body -->
+    <rect x="1720" y="320" width="2220" height="1780" 
+          fill="#FBFCFE" stroke="#5B7C99" stroke-width="3" stroke-dasharray="12,8" rx="4" />
+  </g>
+
+  <!-- Package: Paquete: Catálogos y Horarios (Gestión Médica) -->
+  <g id="pkg_catalogos">
+    <!-- Package Tab -->
+    <path d="M 4040 320 
+             L 4040 264 
+             Q 4040 256 4048 256 
+             L 4856 256 
+             L 4880 320 Z" 
+          fill="url(#eaPkgGrad)" stroke="#5B7C99" stroke-width="3.2" />
+    <text x="4068" y="298" font-size="24" font-weight="bold" fill="#16325C">
+      Paquete: Catálogos y Horarios (Gestión Médica)
+    </text>
+
+    <!-- Package Body -->
+    <rect x="4040" y="320" width="2780" height="1780" 
+          fill="#FBFCFE" stroke="#5B7C99" stroke-width="3" stroke-dasharray="12,8" rx="4" />
+  </g>
+
+  <!-- Package: Paquete: Administración y Auditoría (Sistema y Resguardo) -->
+  <g id="pkg_admin">
+    <!-- Package Tab -->
+    <path d="M 80 2240 
+             L 80 2184 
+             Q 80 2176 88 2176 
+             L 896 2176 
+             L 920 2240 Z" 
+          fill="url(#eaPkgGrad)" stroke="#5B7C99" stroke-width="3.2" />
+    <text x="108" y="2218" font-size="24" font-weight="bold" fill="#16325C">
+      Paquete: Administración y Auditoría (Sistema y Resguardo)
+    </text>
+
+    <!-- Package Body -->
+    <rect x="80" y="2240" width="1560" height="1960" 
+          fill="#FBFCFE" stroke="#5B7C99" stroke-width="3" stroke-dasharray="12,8" rx="4" />
+  </g>
+
+  <!-- Package: Paquete: Citas y Notificaciones (Atención Ambulatoria y Pagos) -->
+  <g id="pkg_citas">
+    <!-- Package Tab -->
+    <path d="M 1720 2240 
+             L 1720 2184 
+             Q 1720 2176 1728 2176 
+             L 2536 2176 
+             L 2560 2240 Z" 
+          fill="url(#eaPkgGrad)" stroke="#5B7C99" stroke-width="3.2" />
+    <text x="1748" y="2218" font-size="24" font-weight="bold" fill="#16325C">
+      Paquete: Citas y Notificaciones (Atención Ambulatoria y Pagos)
+    </text>
+
+    <!-- Package Body -->
+    <rect x="1720" y="2240" width="2680" height="1960" 
+          fill="#FBFCFE" stroke="#5B7C99" stroke-width="3" stroke-dasharray="12,8" rx="4" />
+  </g>
+
+  <!-- Package: Paquete: Historia Clínica (Atención Médica y Diagnóstico) -->
+  <g id="pkg_historia">
+    <!-- Package Tab -->
+    <path d="M 4480 2240 
+             L 4480 2184 
+             Q 4480 2176 4488 2176 
+             L 5296 2176 
+             L 5320 2240 Z" 
+          fill="url(#eaPkgGrad)" stroke="#5B7C99" stroke-width="3.2" />
+    <text x="4508" y="2218" font-size="24" font-weight="bold" fill="#16325C">
+      Paquete: Historia Clínica (Atención Médica y Diagnóstico)
+    </text>
+
+    <!-- Package Body -->
+    <rect x="4480" y="2240" width="2340" height="1960" 
+          fill="#FBFCFE" stroke="#5B7C99" stroke-width="3" stroke-dasharray="12,8" rx="4" />
+  </g>
+
+  <!-- Relation 1: roles -> usuarios -->
+  <g id="rel_roles_usuarios">
+    <!-- Solid Association Line -->
+    <path d="M 320 740 L 320 1260" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="340" y="776" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="340" y="1236" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(218.4, 970)">
+      <rect x="0" y="0" width="203.2" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="101.6" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        asigna rol a
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 2: roles -> rol_permiso -->
+  <g id="rel_roles_rol_permiso">
+    <!-- Solid Association Line -->
+    <path d="M 620 580 L 720 580 L 720 880" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="644" y="564" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="740" y="856" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(666, 690)">
+      <rect x="0" y="0" width="108" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="54" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        posee
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 3: permisos -> rol_permiso -->
+  <g id="rel_permisos_rol_permiso">
+    <!-- Solid Association Line -->
+    <path d="M 960 660 L 860 660 L 860 880" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="912" y="644" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="880" y="856" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(758.4, 740)">
+      <rect x="0" y="0" width="203.2" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="101.6" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        concedido en
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 4: usuarios -> personas -->
+  <g id="rel_usuarios_personas">
+    <!-- Solid Association Line -->
+    <path d="M 680 1360 L 1680 1360 L 1680 720 L 1780 720" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="704" y="1344" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="1728" y="704" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(1085.2, 1340)">
+      <rect x="0" y="0" width="189.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="94.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        accede como
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 5: personas -> pacientes -->
+  <g id="rel_personas_pacientes">
+    <!-- Solid Association Line -->
+    <path d="M 2300 600 L 2560 600" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="2324" y="584" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="2508" y="584" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(2301.2, 580)">
+      <rect x="0" y="0" width="257.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="128.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        se registra como
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 6: personas -> medicos -->
+  <g id="rel_personas_medicos">
+    <!-- Solid Association Line -->
+    <path d="M 2040 440 L 2040 370 L 4370 370 L 4370 440" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="2060" y="420" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="4390" y="416" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(3071.2, 350)">
+      <rect x="0" y="0" width="257.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="128.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        se acredita como
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 7: pacientes -> informacion_medica_paciente -->
+  <g id="rel_pacientes_informacion_medica_paciente">
+    <!-- Solid Association Line -->
+    <path d="M 3060 580 L 3300 580" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="3084" y="564" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="3248" y="564" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(3085.2, 560)">
+      <rect x="0" y="0" width="189.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="94.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        posee ficha
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 8: pacientes -> contactos_emergencia -->
+  <g id="rel_pacientes_contactos_emergencia">
+    <!-- Solid Association Line -->
+    <path d="M 2820 782 L 2820 1080" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="2840" y="818" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="2840" y="1056" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(2745.6, 910)">
+      <rect x="0" y="0" width="148.8" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="74.4" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        registra
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 9: medicos -> medico_especialidad -->
+  <g id="rel_medicos_medico_especialidad">
+    <!-- Solid Association Line -->
+    <path d="M 4500 782 L 4500 880 L 4680 880 L 4680 980" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="4520" y="818" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="4700" y="956" font-size="22" font-weight="bold" fill="#0F172A">
+      1..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(4619.2, 860)">
+      <rect x="0" y="0" width="121.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="60.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        ejerce
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 10: especialidades -> medico_especialidad -->
+  <g id="rel_especialidades_medico_especialidad">
+    <!-- Solid Association Line -->
+    <path d="M 5080 908 L 5080 940 L 4920 940 L 4920 980" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="5100" y="944" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="4940" y="956" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(4939.2, 920)">
+      <rect x="0" y="0" width="121.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="60.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        agrupa
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 11: medicos -> horarios_atencion -->
+  <g id="rel_medicos_horarios_atencion">
+    <!-- Solid Association Line -->
+    <path d="M 4400 782 L 4400 930 L 5440 930 L 5440 1040" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="4420" y="818" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="5460" y="1016" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(5139.2, 910)">
+      <rect x="0" y="0" width="121.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="60.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        cumple
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 12: especialidades -> horarios_atencion -->
+  <g id="rel_especialidades_horarios_atencion">
+    <!-- Solid Association Line -->
+    <path d="M 5520 908 L 5520 1040" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="5540" y="944" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="5540" y="1016" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(5404.8, 950)">
+      <rect x="0" y="0" width="230.4" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="115.2" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        se programa en
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 13: medicos -> suspensiones_horario -->
+  <g id="rel_medicos_suspensiones_horario">
+    <!-- Solid Association Line -->
+    <path d="M 4280 782 L 4280 1540" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="4300" y="818" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="4300" y="1516" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(4212.4, 1140)">
+      <rect x="0" y="0" width="135.2" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="67.6" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        declara
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 14: medicos -> bloqueos_clinica -->
+  <g id="rel_medicos_bloqueos_clinica">
+    <!-- Solid Association Line -->
+    <path d="M 4440 782 L 4440 1340 L 5040 1340 L 5040 1540" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="4460" y="818" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="5060" y="1516" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(4638.4, 1320)">
+      <rect x="0" y="0" width="203.2" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="101.6" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        afectado por
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 15: pacientes -> citas -->
+  <g id="rel_pacientes_citas">
+    <!-- Solid Association Line -->
+    <path d="M 2620 782 L 2620 920 L 2440 920 L 2440 2100 L 2700 2100 L 2700 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="2640" y="818" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="2720" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(2365.6, 1580)">
+      <rect x="0" y="0" width="148.8" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="74.4" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        solicita
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 16: medicos -> citas -->
+  <g id="rel_medicos_citas">
+    <!-- Solid Association Line -->
+    <path d="M 4120 640 L 4020 640 L 4020 2160 L 2940 2160 L 2940 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="4072" y="624" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="2960" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(3952.4, 1340)">
+      <rect x="0" y="0" width="135.2" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="67.6" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        atiende
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 17: especialidades -> citas -->
+  <g id="rel_especialidades_citas">
+    <!-- Solid Association Line -->
+    <path d="M 5280 440 L 5280 340 L 3960 340 L 3960 2200 L 3060 2200 L 3060 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="5300" y="420" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="3080" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(3851.6, 1080)">
+      <rect x="0" y="0" width="216.79999999999998" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="108.39999999999999" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        corresponde a
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 18: estados_cita -> citas -->
+  <g id="rel_estados_cita_citas">
+    <!-- Solid Association Line -->
+    <path d="M 2260 2520 L 2600 2520" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="2284" y="2504" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="2548" y="2504" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(2348.8, 2500)">
+      <rect x="0" y="0" width="162.39999999999998" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="81.19999999999999" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        clasifica
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 19: usuarios -> citas -->
+  <g id="rel_usuarios_citas">
+    <!-- Solid Association Line -->
+    <path d="M 680 1680 L 1680 1680 L 1680 2120 L 2780 2120 L 2780 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="704" y="1664" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="2800" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(2071.2, 2100)">
+      <rect x="0" y="0" width="257.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="128.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        agenda / reserva
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 20: citas -> pagos_cita -->
+  <g id="rel_citas_pagos_cita">
+    <!-- Solid Association Line -->
+    <path d="M 3180 2560 L 3480 2560" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="3204" y="2544" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="3428" y="2544" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(3201.2, 2540)">
+      <rect x="0" y="0" width="257.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="128.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        liquida mediante
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 21: usuarios -> notificaciones -->
+  <g id="rel_usuarios_notificaciones">
+    <!-- Solid Association Line -->
+    <path d="M 400 1792 L 400 2040 L 1700 2040 L 1700 3160 L 1780 3160" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="420" y="1828" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="1728" y="3144" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(1639.2, 2660)">
+      <rect x="0" y="0" width="121.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="60.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        recibe
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 22: citas -> atenciones_clinicas -->
+  <g id="rel_citas_atenciones_clinicas">
+    <!-- Solid Association Line -->
+    <path d="M 3120 2400 L 3120 2300 L 4700 2300 L 4700 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="3140" y="2380" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="4720" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(3832.4, 2280)">
+      <rect x="0" y="0" width="135.2" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="67.6" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        origina
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 23: pacientes -> atenciones_clinicas -->
+  <g id="rel_pacientes_atenciones_clinicas">
+    <!-- Solid Association Line -->
+    <path d="M 3060 720 L 3180 720 L 3180 2000 L 4840 2000 L 4840 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="3084" y="704" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="4860" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(3908, 1980)">
+      <rect x="0" y="0" width="244" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="122" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        recibe atención
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 24: medicos -> atenciones_clinicas -->
+  <g id="rel_medicos_atenciones_clinicas">
+    <!-- Solid Association Line -->
+    <path d="M 4620 540 L 5860 540 L 5860 2260 L 5000 2260 L 5000 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="4644" y="524" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="5020" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(5724.4, 1580)">
+      <rect x="0" y="0" width="271.2" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="135.6" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        registra consulta
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 25: pacientes -> resultados_laboratorio -->
+  <g id="rel_pacientes_resultados_laboratorio">
+    <!-- Solid Association Line -->
+    <path d="M 3060 660 L 3220 660 L 3220 1920 L 5680 1920 L 5680 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="3084" y="644" font-size="22" font-weight="bold" fill="#0F172A">
+      1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="5700" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(4345.2, 1900)">
+      <rect x="0" y="0" width="189.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="94.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        pertenece a
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 26: atenciones_clinicas -> resultados_laboratorio -->
+  <g id="rel_atenciones_clinicas_resultados_laboratorio">
+    <!-- Solid Association Line -->
+    <path d="M 5120 2560 L 5480 2560" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="5144" y="2544" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="5428" y="2544" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(5218.8, 2540)">
+      <rect x="0" y="0" width="162.39999999999998" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="81.19999999999999" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        deriva en
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 27: usuarios -> bitacora_auditoria -->
+  <g id="rel_usuarios_bitacora_auditoria">
+    <!-- Solid Association Line -->
+    <path d="M 240 1792 L 240 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="260" y="1828" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="260" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(138.4, 2080)">
+      <rect x="0" y="0" width="203.2" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="101.6" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        genera traza
+      </text>
+    </g>
+  </g>
+
+  <!-- Relation 28: usuarios -> copias_seguridad -->
+  <g id="rel_usuarios_copias_seguridad">
+    <!-- Solid Association Line -->
+    <path d="M 560 1792 L 560 2140 L 960 2140 L 960 2400" fill="none" stroke="#2B547E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Cardinality From -->
+    <text x="580" y="1828" font-size="22" font-weight="bold" fill="#0F172A">
+      0..1
+    </text>
+
+    <!-- Cardinality To -->
+    <text x="980" y="2376" font-size="22" font-weight="bold" fill="#0F172A">
+      0..*
+    </text>
+
+    <!-- Verb / Descriptive Action Badge -->
+    <g transform="translate(631.2, 2120)">
+      <rect x="0" y="0" width="257.6" height="40" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+      <text x="128.8" y="28" text-anchor="middle" font-size="21" font-weight="600" fill="#1E3A8A">
+        ejecuta respaldo
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: roles -->
+  <g id="table_roles" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="140" y="440" width="480" height="340" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="140" y="440" width="480" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="140" y1="528" x2="620" y2="528" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="380" y="472" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="380" y="510" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      roles
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_roles">
+      <!-- PK -->
+      <g transform="translate(164, 564)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_rol (PK)
+        </text>
+      </g>
+      <line x1="160" y1="584" x2="600" y2="584" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="184" y="608" font-size="23" fill="#1F2937">
+        nombre
+      </text>
+      <text x="184" y="652" font-size="23" fill="#1F2937">
+        descripcion
+      </text>
+      <text x="184" y="696" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="184" y="740" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: permisos -->
+  <g id="table_permisos" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="960" y="440" width="520" height="428" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="960" y="440" width="520" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="960" y1="528" x2="1480" y2="528" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="1220" y="472" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="1220" y="510" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      permisos
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_permisos">
+      <!-- PK -->
+      <g transform="translate(984, 564)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_permiso (PK)
+        </text>
+      </g>
+      <line x1="980" y1="584" x2="1460" y2="584" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="1004" y="608" font-size="23" fill="#1F2937">
+        modulo
+      </text>
+      <text x="1004" y="652" font-size="23" fill="#1F2937">
+        nombre
+      </text>
+      <text x="1004" y="696" font-size="23" fill="#1F2937">
+        slug
+      </text>
+      <text x="1004" y="740" font-size="23" fill="#1F2937">
+        descripcion
+      </text>
+      <text x="1004" y="784" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="1004" y="828" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: rol_permiso -->
+  <g id="table_rol_permiso" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="560" y="880" width="460" height="252" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="560" y="880" width="460" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="560" y1="968" x2="1020" y2="968" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="790" y="912" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="790" y="950" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      rol_permiso
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_rol_permiso">
+      <!-- PK -->
+      <g transform="translate(584, 1004)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_rol, id_permiso (PK)
+        </text>
+      </g>
+      <line x1="580" y1="1024" x2="1000" y2="1024" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="604" y="1048" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="604" y="1092" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: usuarios -->
+  <g id="table_usuarios" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="140" y="1260" width="540" height="560" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="140" y="1260" width="540" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="140" y1="1348" x2="680" y2="1348" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="410" y="1292" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="410" y="1330" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      usuarios
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_usuarios">
+      <!-- PK -->
+      <g transform="translate(164, 1384)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_usuario (PK)
+        </text>
+      </g>
+      <line x1="160" y1="1404" x2="660" y2="1404" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="184" y="1428" font-size="23" fill="#1F2937">
+        nombre_usuario
+      </text>
+      <text x="184" y="1472" font-size="23" fill="#1F2937">
+        correo
+      </text>
+      <text x="184" y="1516" font-size="23" fill="#1F2937">
+        contrasena_hash
+      </text>
+      <text x="184" y="1560" font-size="23" fill="#1F2937">
+        debe_cambiar_contrasena
+      </text>
+      <text x="184" y="1604" font-size="23" fill="#1F2937">
+        estado
+      </text>
+      <text x="184" y="1648" font-size="23" fill="#1F2937">
+        ultimo_acceso
+      </text>
+      <text x="184" y="1692" font-size="23" fill="#1F2937">
+        token_sesion
+      </text>
+      <text x="184" y="1736" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="184" y="1780" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: personas -->
+  <g id="table_personas" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="1780" y="440" width="520" height="604" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="1780" y="440" width="520" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="1780" y1="528" x2="2300" y2="528" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="2040" y="472" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="2040" y="510" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      personas
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_personas">
+      <!-- PK -->
+      <g transform="translate(1804, 564)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_persona (PK)
+        </text>
+      </g>
+      <line x1="1800" y1="584" x2="2280" y2="584" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="1824" y="608" font-size="23" fill="#1F2937">
+        ci
+      </text>
+      <text x="1824" y="652" font-size="23" fill="#1F2937">
+        nombres
+      </text>
+      <text x="1824" y="696" font-size="23" fill="#1F2937">
+        apellidos
+      </text>
+      <text x="1824" y="740" font-size="23" fill="#1F2937">
+        fecha_nacimiento
+      </text>
+      <text x="1824" y="784" font-size="23" fill="#1F2937">
+        sexo
+      </text>
+      <text x="1824" y="828" font-size="23" fill="#1F2937">
+        telefono
+      </text>
+      <text x="1824" y="872" font-size="23" fill="#1F2937">
+        correo
+      </text>
+      <text x="1824" y="916" font-size="23" fill="#1F2937">
+        direccion
+      </text>
+      <text x="1824" y="960" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="1824" y="1004" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: pacientes -->
+  <g id="table_pacientes" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="2560" y="440" width="500" height="384" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="2560" y="440" width="500" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="2560" y1="528" x2="3060" y2="528" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="2810" y="472" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="2810" y="510" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      pacientes
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_pacientes">
+      <!-- PK -->
+      <g transform="translate(2584, 564)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_paciente (PK)
+        </text>
+      </g>
+      <line x1="2580" y1="584" x2="3040" y2="584" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="2604" y="608" font-size="23" fill="#1F2937">
+        codigo_historia
+      </text>
+      <text x="2604" y="652" font-size="23" fill="#1F2937">
+        grupo_sanguineo
+      </text>
+      <text x="2604" y="696" font-size="23" fill="#1F2937">
+        estado
+      </text>
+      <text x="2604" y="740" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="2604" y="784" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: informacion_medica_paciente -->
+  <g id="table_informacion_medica_paciente" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="3300" y="440" width="580" height="472" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="3300" y="440" width="580" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="3300" y1="528" x2="3880" y2="528" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="3590" y="472" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="3590" y="510" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      informacion_medica_paciente
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_informacion_medica_paciente">
+      <!-- PK -->
+      <g transform="translate(3324, 564)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_informacion_medica (PK)
+        </text>
+      </g>
+      <line x1="3320" y1="584" x2="3860" y2="584" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="3344" y="608" font-size="23" fill="#1F2937">
+        alergias
+      </text>
+      <text x="3344" y="652" font-size="23" fill="#1F2937">
+        enfermedades_cronicas
+      </text>
+      <text x="3344" y="696" font-size="23" fill="#1F2937">
+        medicamentos_actuales
+      </text>
+      <text x="3344" y="740" font-size="23" fill="#1F2937">
+        antecedentes_familiares
+      </text>
+      <text x="3344" y="784" font-size="23" fill="#1F2937">
+        observaciones
+      </text>
+      <text x="3344" y="828" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="3344" y="872" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: contactos_emergencia -->
+  <g id="table_contactos_emergencia" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="2560" y="1080" width="520" height="472" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="2560" y="1080" width="520" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="2560" y1="1168" x2="3080" y2="1168" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="2820" y="1112" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="2820" y="1150" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      contactos_emergencia
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_contactos_emergencia">
+      <!-- PK -->
+      <g transform="translate(2584, 1204)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_contacto_emergencia (PK)
+        </text>
+      </g>
+      <line x1="2580" y1="1224" x2="3060" y2="1224" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="2604" y="1248" font-size="23" fill="#1F2937">
+        nombre_completo
+      </text>
+      <text x="2604" y="1292" font-size="23" fill="#1F2937">
+        relacion
+      </text>
+      <text x="2604" y="1336" font-size="23" fill="#1F2937">
+        telefono
+      </text>
+      <text x="2604" y="1380" font-size="23" fill="#1F2937">
+        direccion
+      </text>
+      <text x="2604" y="1424" font-size="23" fill="#1F2937">
+        es_principal
+      </text>
+      <text x="2604" y="1468" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="2604" y="1512" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: medicos -->
+  <g id="table_medicos" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="4120" y="440" width="500" height="384" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="4120" y="440" width="500" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="4120" y1="528" x2="4620" y2="528" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="4370" y="472" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="4370" y="510" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      medicos
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_medicos">
+      <!-- PK -->
+      <g transform="translate(4144, 564)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_medico (PK)
+        </text>
+      </g>
+      <line x1="4140" y1="584" x2="4600" y2="584" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="4164" y="608" font-size="23" fill="#1F2937">
+        nro_matricula
+      </text>
+      <text x="4164" y="652" font-size="23" fill="#1F2937">
+        biografia
+      </text>
+      <text x="4164" y="696" font-size="23" fill="#1F2937">
+        estado
+      </text>
+      <text x="4164" y="740" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="4164" y="784" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: especialidades -->
+  <g id="table_especialidades" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="5000" y="440" width="560" height="516" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="5000" y="440" width="560" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="5000" y1="528" x2="5560" y2="528" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="5280" y="472" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="5280" y="510" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      especialidades
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_especialidades">
+      <!-- PK -->
+      <g transform="translate(5024, 564)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_especialidad (PK)
+        </text>
+      </g>
+      <line x1="5020" y1="584" x2="5540" y2="584" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="5044" y="608" font-size="23" fill="#1F2937">
+        nombre
+      </text>
+      <text x="5044" y="652" font-size="23" fill="#1F2937">
+        nombre_normalizado
+      </text>
+      <text x="5044" y="696" font-size="23" fill="#1F2937">
+        descripcion
+      </text>
+      <text x="5044" y="740" font-size="23" fill="#1F2937">
+        duracion_turno_minutos
+      </text>
+      <text x="5044" y="784" font-size="23" fill="#1F2937">
+        reservable_en_linea
+      </text>
+      <text x="5044" y="828" font-size="23" fill="#1F2937">
+        estado
+      </text>
+      <text x="5044" y="872" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="5044" y="916" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: medico_especialidad -->
+  <g id="table_medico_especialidad" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="4560" y="980" width="480" height="252" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="4560" y="980" width="480" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="4560" y1="1068" x2="5040" y2="1068" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="4800" y="1012" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="4800" y="1050" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      medico_especialidad
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_medico_especialidad">
+      <!-- PK -->
+      <g transform="translate(4584, 1104)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_medico_especialidad (PK)
+        </text>
+      </g>
+      <line x1="4580" y1="1124" x2="5020" y2="1124" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="4604" y="1148" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="4604" y="1192" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: horarios_atencion -->
+  <g id="table_horarios_atencion" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="5260" y="1040" width="540" height="472" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="5260" y="1040" width="540" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="5260" y1="1128" x2="5800" y2="1128" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="5530" y="1072" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="5530" y="1110" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      horarios_atencion
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_horarios_atencion">
+      <!-- PK -->
+      <g transform="translate(5284, 1164)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_horario (PK)
+        </text>
+      </g>
+      <line x1="5280" y1="1184" x2="5780" y2="1184" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="5304" y="1208" font-size="23" fill="#1F2937">
+        dia_semana
+      </text>
+      <text x="5304" y="1252" font-size="23" fill="#1F2937">
+        hora_inicio
+      </text>
+      <text x="5304" y="1296" font-size="23" fill="#1F2937">
+        hora_fin
+      </text>
+      <text x="5304" y="1340" font-size="23" fill="#1F2937">
+        duracion_intervalo_minutos
+      </text>
+      <text x="5304" y="1384" font-size="23" fill="#1F2937">
+        estado
+      </text>
+      <text x="5304" y="1428" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="5304" y="1472" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: suspensiones_horario -->
+  <g id="table_suspensiones_horario" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="4120" y="1540" width="520" height="428" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="4120" y="1540" width="520" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="4120" y1="1628" x2="4640" y2="1628" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="4380" y="1572" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="4380" y="1610" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      suspensiones_horario
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_suspensiones_horario">
+      <!-- PK -->
+      <g transform="translate(4144, 1664)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_suspension (PK)
+        </text>
+      </g>
+      <line x1="4140" y1="1684" x2="4620" y2="1684" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="4164" y="1708" font-size="23" fill="#1F2937">
+        fecha_inicio
+      </text>
+      <text x="4164" y="1752" font-size="23" fill="#1F2937">
+        fecha_fin
+      </text>
+      <text x="4164" y="1796" font-size="23" fill="#1F2937">
+        motivo
+      </text>
+      <text x="4164" y="1840" font-size="23" fill="#1F2937">
+        estado_citas_accion
+      </text>
+      <text x="4164" y="1884" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="4164" y="1928" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: bloqueos_clinica -->
+  <g id="table_bloqueos_clinica" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="4880" y="1540" width="500" height="516" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="4880" y="1540" width="500" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="4880" y1="1628" x2="5380" y2="1628" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="5130" y="1572" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="5130" y="1610" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      bloqueos_clinica
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_bloqueos_clinica">
+      <!-- PK -->
+      <g transform="translate(4904, 1664)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_bloqueo (PK)
+        </text>
+      </g>
+      <line x1="4900" y1="1684" x2="5360" y2="1684" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="4924" y="1708" font-size="23" fill="#1F2937">
+        titulo
+      </text>
+      <text x="4924" y="1752" font-size="23" fill="#1F2937">
+        motivo
+      </text>
+      <text x="4924" y="1796" font-size="23" fill="#1F2937">
+        fecha_inicio
+      </text>
+      <text x="4924" y="1840" font-size="23" fill="#1F2937">
+        fecha_fin
+      </text>
+      <text x="4924" y="1884" font-size="23" fill="#1F2937">
+        aplica_a_todos
+      </text>
+      <text x="4924" y="1928" font-size="23" fill="#1F2937">
+        estado
+      </text>
+      <text x="4924" y="1972" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="4924" y="2016" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: estados_cita -->
+  <g id="table_estados_cita" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="1780" y="2400" width="480" height="384" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="1780" y="2400" width="480" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="1780" y1="2488" x2="2260" y2="2488" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="2020" y="2432" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="2020" y="2470" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      estados_cita
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_estados_cita">
+      <!-- PK -->
+      <g transform="translate(1804, 2524)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_estado_cita (PK)
+        </text>
+      </g>
+      <line x1="1800" y1="2544" x2="2240" y2="2544" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="1824" y="2568" font-size="23" fill="#1F2937">
+        codigo
+      </text>
+      <text x="1824" y="2612" font-size="23" fill="#1F2937">
+        nombre
+      </text>
+      <text x="1824" y="2656" font-size="23" fill="#1F2937">
+        descripcion
+      </text>
+      <text x="1824" y="2700" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="1824" y="2744" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: citas -->
+  <g id="table_citas" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="2600" y="2400" width="580" height="692" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="2600" y="2400" width="580" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="2600" y1="2488" x2="3180" y2="2488" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="2890" y="2432" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="2890" y="2470" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      citas
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_citas">
+      <!-- PK -->
+      <g transform="translate(2624, 2524)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_cita (PK)
+        </text>
+      </g>
+      <line x1="2620" y1="2544" x2="3160" y2="2544" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="2644" y="2568" font-size="23" fill="#1F2937">
+        codigo_cita
+      </text>
+      <text x="2644" y="2612" font-size="23" fill="#1F2937">
+        fecha_cita
+      </text>
+      <text x="2644" y="2656" font-size="23" fill="#1F2937">
+        hora_inicio
+      </text>
+      <text x="2644" y="2700" font-size="23" fill="#1F2937">
+        hora_fin
+      </text>
+      <text x="2644" y="2744" font-size="23" fill="#1F2937">
+        motivo_consulta
+      </text>
+      <text x="2644" y="2788" font-size="23" fill="#1F2937">
+        observaciones
+      </text>
+      <text x="2644" y="2832" font-size="23" fill="#1F2937">
+        es_postergada
+      </text>
+      <text x="2644" y="2876" font-size="23" fill="#1F2937">
+        fecha_expiracion_reserva
+      </text>
+      <text x="2644" y="2920" font-size="23" fill="#1F2937">
+        pago_confirmado
+      </text>
+      <text x="2644" y="2964" font-size="23" fill="#1F2937">
+        estado
+      </text>
+      <text x="2644" y="3008" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="2644" y="3052" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: pagos_cita -->
+  <g id="table_pagos_cita" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="3480" y="2400" width="540" height="560" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="3480" y="2400" width="540" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="3480" y1="2488" x2="4020" y2="2488" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="3750" y="2432" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="3750" y="2470" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      pagos_cita
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_pagos_cita">
+      <!-- PK -->
+      <g transform="translate(3504, 2524)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_pago (PK)
+        </text>
+      </g>
+      <line x1="3500" y1="2544" x2="4000" y2="2544" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="3524" y="2568" font-size="23" fill="#1F2937">
+        monto
+      </text>
+      <text x="3524" y="2612" font-size="23" fill="#1F2937">
+        metodo_pago
+      </text>
+      <text x="3524" y="2656" font-size="23" fill="#1F2937">
+        nro_transaccion
+      </text>
+      <text x="3524" y="2700" font-size="23" fill="#1F2937">
+        estado_pago
+      </text>
+      <text x="3524" y="2744" font-size="23" fill="#1F2937">
+        detalles_pasarela
+      </text>
+      <text x="3524" y="2788" font-size="23" fill="#1F2937">
+        fecha_pago
+      </text>
+      <text x="3524" y="2832" font-size="23" fill="#1F2937">
+        fecha_reembolso
+      </text>
+      <text x="3524" y="2876" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="3524" y="2920" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: notificaciones -->
+  <g id="table_notificaciones" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="1780" y="3040" width="500" height="516" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="1780" y="3040" width="500" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="1780" y1="3128" x2="2280" y2="3128" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="2030" y="3072" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="2030" y="3110" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      notificaciones
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_notificaciones">
+      <!-- PK -->
+      <g transform="translate(1804, 3164)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_notificacion (PK)
+        </text>
+      </g>
+      <line x1="1800" y1="3184" x2="2260" y2="3184" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="1824" y="3208" font-size="23" fill="#1F2937">
+        tipo
+      </text>
+      <text x="1824" y="3252" font-size="23" fill="#1F2937">
+        titulo
+      </text>
+      <text x="1824" y="3296" font-size="23" fill="#1F2937">
+        mensaje
+      </text>
+      <text x="1824" y="3340" font-size="23" fill="#1F2937">
+        leido
+      </text>
+      <text x="1824" y="3384" font-size="23" fill="#1F2937">
+        fecha_leido
+      </text>
+      <text x="1824" y="3428" font-size="23" fill="#1F2937">
+        metadata
+      </text>
+      <text x="1824" y="3472" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="1824" y="3516" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: atenciones_clinicas -->
+  <g id="table_atenciones_clinicas" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="4560" y="2400" width="560" height="516" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="4560" y="2400" width="560" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="4560" y1="2488" x2="5120" y2="2488" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="4840" y="2432" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="4840" y="2470" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      atenciones_clinicas
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_atenciones_clinicas">
+      <!-- PK -->
+      <g transform="translate(4584, 2524)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_atencion (PK)
+        </text>
+      </g>
+      <line x1="4580" y1="2544" x2="5100" y2="2544" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="4604" y="2568" font-size="23" fill="#1F2937">
+        motivo_atencion
+      </text>
+      <text x="4604" y="2612" font-size="23" fill="#1F2937">
+        examen_fisico
+      </text>
+      <text x="4604" y="2656" font-size="23" fill="#1F2937">
+        diagnostico
+      </text>
+      <text x="4604" y="2700" font-size="23" fill="#1F2937">
+        tratamiento_indicaciones
+      </text>
+      <text x="4604" y="2744" font-size="23" fill="#1F2937">
+        receta_medica
+      </text>
+      <text x="4604" y="2788" font-size="23" fill="#1F2937">
+        fecha_atencion
+      </text>
+      <text x="4604" y="2832" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="4604" y="2876" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: resultados_laboratorio -->
+  <g id="table_resultados_laboratorio" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="5480" y="2400" width="540" height="428" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="5480" y="2400" width="540" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="5480" y1="2488" x2="6020" y2="2488" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="5750" y="2432" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="5750" y="2470" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      resultados_laboratorio
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_resultados_laboratorio">
+      <!-- PK -->
+      <g transform="translate(5504, 2524)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_resultado (PK)
+        </text>
+      </g>
+      <line x1="5500" y1="2544" x2="6000" y2="2544" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="5524" y="2568" font-size="23" fill="#1F2937">
+        tipo_estudio
+      </text>
+      <text x="5524" y="2612" font-size="23" fill="#1F2937">
+        descripcion
+      </text>
+      <text x="5524" y="2656" font-size="23" fill="#1F2937">
+        archivo_adjunto
+      </text>
+      <text x="5524" y="2700" font-size="23" fill="#1F2937">
+        fecha_estudio
+      </text>
+      <text x="5524" y="2744" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="5524" y="2788" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: bitacora_auditoria -->
+  <g id="table_bitacora_auditoria" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="140" y="2400" width="540" height="648" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="140" y="2400" width="540" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="140" y1="2488" x2="680" y2="2488" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="410" y="2432" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="410" y="2470" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      bitacora_auditoria
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_bitacora_auditoria">
+      <!-- PK -->
+      <g transform="translate(164, 2524)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_bitacora (PK)
+        </text>
+      </g>
+      <line x1="160" y1="2544" x2="660" y2="2544" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="184" y="2568" font-size="23" fill="#1F2937">
+        caso_uso
+      </text>
+      <text x="184" y="2612" font-size="23" fill="#1F2937">
+        accion
+      </text>
+      <text x="184" y="2656" font-size="23" fill="#1F2937">
+        tabla_afectada
+      </text>
+      <text x="184" y="2700" font-size="23" fill="#1F2937">
+        registro_id
+      </text>
+      <text x="184" y="2744" font-size="23" fill="#1F2937">
+        datos_anteriores
+      </text>
+      <text x="184" y="2788" font-size="23" fill="#1F2937">
+        datos_nuevos
+      </text>
+      <text x="184" y="2832" font-size="23" fill="#1F2937">
+        ip_origen
+      </text>
+      <text x="184" y="2876" font-size="23" fill="#1F2937">
+        user_agent
+      </text>
+      <text x="184" y="2920" font-size="23" fill="#1F2937">
+        fecha_hora
+      </text>
+      <text x="184" y="2964" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="184" y="3008" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: copias_seguridad -->
+  <g id="table_copias_seguridad" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="800" y="2400" width="500" height="472" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="800" y="2400" width="500" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="800" y1="2488" x2="1300" y2="2488" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="1050" y="2432" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="1050" y="2470" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      copias_seguridad
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_copias_seguridad">
+      <!-- PK -->
+      <g transform="translate(824, 2524)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_copia (PK)
+        </text>
+      </g>
+      <line x1="820" y1="2544" x2="1280" y2="2544" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="844" y="2568" font-size="23" fill="#1F2937">
+        nombre_archivo
+      </text>
+      <text x="844" y="2612" font-size="23" fill="#1F2937">
+        ruta_almacenamiento
+      </text>
+      <text x="844" y="2656" font-size="23" fill="#1F2937">
+        tamano_bytes
+      </text>
+      <text x="844" y="2700" font-size="23" fill="#1F2937">
+        tipo
+      </text>
+      <text x="844" y="2744" font-size="23" fill="#1F2937">
+        estado
+      </text>
+      <text x="844" y="2788" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="844" y="2832" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Class: parametros_sistema -->
+  <g id="table_parametros_sistema" filter="url(#eaShadow)">
+    <!-- Class Outer Box -->
+    <rect x="800" y="3060" width="500" height="428" 
+          fill="#FFFFFF" stroke="#234C73" stroke-width="3.2" rx="4" />
+
+    <!-- Class Header Compartment -->
+    <rect x="800" y="3060" width="500" height="88" 
+          fill="url(#eaHeaderGrad)" rx="4" />
+    <!-- Header bottom border line -->
+    <line x1="800" y1="3148" x2="1300" y2="3148" 
+          stroke="#234C73" stroke-width="3.2" />
+
+    <!-- Stereotype «table» (strictly escaped numeric XML character references) -->
+    <text x="1050" y="3092" text-anchor="middle" 
+          font-size="21" font-style="italic" fill="#4B6584">
+      &#171;table&#187;
+    </text>
+
+    <!-- Class / Table Name -->
+    <text x="1050" y="3130" text-anchor="middle" 
+          font-size="28" font-weight="bold" fill="#00264D" letter-spacing="0.5">
+      parametros_sistema
+    </text>
+
+    <!-- Attributes Compartment -->
+    <g id="attrs_parametros_sistema">
+      <!-- PK -->
+      <g transform="translate(824, 3184)">
+        <!-- Key Icon Symbol -->
+        <circle cx="10" cy="-8" r="7" fill="none" stroke="#D97706" stroke-width="2.4" />
+        <line x1="17" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+        <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <line x1="28" y1="-8" x2="28" y2="-3" stroke="#D97706" stroke-width="2.4" />
+        <text x="40" y="0" font-size="24" font-weight="bold" fill="#0F4C81">
+          + id_parametro (PK)
+        </text>
+      </g>
+      <line x1="820" y1="3204" x2="1280" y2="3204" 
+            stroke="#A5C4DF" stroke-width="1.6" stroke-dasharray="4,4" />
+      <text x="844" y="3228" font-size="23" fill="#1F2937">
+        clave
+      </text>
+      <text x="844" y="3272" font-size="23" fill="#1F2937">
+        valor
+      </text>
+      <text x="844" y="3316" font-size="23" fill="#1F2937">
+        descripcion
+      </text>
+      <text x="844" y="3360" font-size="23" fill="#1F2937">
+        tipo_dato
+      </text>
+      <text x="844" y="3404" font-size="23" fill="#1F2937">
+        created_at
+      </text>
+      <text x="844" y="3448" font-size="23" fill="#1F2937">
+        updated_at
+      </text>
+    </g>
+  </g>
+
+  <!-- Diagram Legend Box (Enterprise Architect Standard) -->
+  <g id="ea_legend" transform="translate(140, 3080)" filter="url(#eaShadow)">
+    <rect x="0" y="0" width="600" height="520" rx="6" fill="#FFFFFF" stroke="#234C73" stroke-width="2.8" />
+    <rect x="0" y="0" width="600" height="56" fill="url(#eaHeaderGrad)" rx="6" />
+    <text x="24" y="38" font-size="22" font-weight="bold" fill="#00264D">CONVENCIONES UML ENTERPRISE ARCHITECT</text>
+
+    <!-- Legend Items -->
+    <g transform="translate(28, 96)">
+      <!-- PK Symbol -->
+      <circle cx="12" cy="-8" r="6.4" fill="none" stroke="#D97706" stroke-width="2.4" />
+      <line x1="18.4" y1="-8" x2="28" y2="-8" stroke="#D97706" stroke-width="2.4" />
+      <line x1="23" y1="-8" x2="23" y2="-3" stroke="#D97706" stroke-width="2.4" />
+      <text x="40" y="0" font-size="22" font-weight="bold" fill="#0F4C81">+ id_columna (PK)</text>
+      <text x="40" y="32" font-size="19" fill="#64748B">Clave Primaria f&#237;sica &#250;nica</text>
+
+      <!-- Regular Attribute -->
+      <text x="40" y="88" font-size="22" fill="#1F2937">nombre_atributo</text>
+      <text x="40" y="120" font-size="19" fill="#64748B">Atributo propio (sin FK ni tipo de dato)</text>
+
+      <!-- Stereotype -->
+      <text x="40" y="176" font-size="22" font-style="italic" fill="#4B6584">&#171;table&#187;</text>
+      <text x="40" y="208" font-size="19" fill="#64748B">Estereotipo de entidad relacional f&#237;sica</text>
+
+      <!-- Association Line -->
+      <line x1="0" y1="252" x2="80" y2="252" stroke="#2B547E" stroke-width="3.6" />
+      <text x="96" y="260" font-size="21" font-weight="bold" fill="#0F172A">1 &#8226;&#8226; [verbo] &#8226;&#8226; 0..*</text>
+      <text x="0" y="296" font-size="19" fill="#64748B">Asociaci&#243;n s&#243;lida con cardinalidad expl&#237;cita</text>
+
+      <!-- Foreign Key Notice -->
+      <rect x="0" y="324" width="544" height="84" rx="4" fill="#F8FAFC" stroke="#E2E8F0" />
+      <text x="16" y="356" font-size="19" font-weight="bold" fill="#0369A1">REGLA DE PUREZA UML:</text>
+      <text x="16" y="388" font-size="18" fill="#475569">Las FKs se expresan s&#243;lo v&#237;a asociaciones con verbo.</text>
+    </g>
+  </g>
+</svg>
